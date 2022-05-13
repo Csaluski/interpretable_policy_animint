@@ -8,6 +8,46 @@
 "y": "corr.var",
 "yend": "corr.var",
 "xend": "Inf",
+"showSelected1": "corr.var" 
+},
+"params": {
+ "lineend": "butt",
+"na.rm": false,
+"na.rm": false,
+"colour": "#000000",
+"size":       13,
+"alpha":      0.5,
+"showSelected": "corr.var" 
+},
+"types": {
+ "x": "numeric",
+"xend": "numeric",
+"y": "integer",
+"yend": "integer",
+"showSelected1": "character",
+"PANEL": "factor",
+"group": "character" 
+},
+"chunk_order": [],
+"nest_order": [
+ "showSelected1",
+"PANEL" 
+],
+"subset_order": [
+ "showSelected1",
+"PANEL" 
+],
+"chunks": 1,
+"total": 1 
+},
+"geom2_segment_varcoef": {
+ "geom": "segment",
+"classed": "geom2_segment_varcoef",
+"aes": {
+ "x": "-Inf",
+"y": "corr.var",
+"yend": "corr.var",
+"xend": "Inf",
 "colour": "corr.coef",
 "showSelected1": "var" 
 },
@@ -40,11 +80,11 @@
 "chunks": 1,
 "total": 1 
 },
-"geom2_point_varcoef": {
+"geom3_point_varcoef": {
  "geom": "point",
-"classed": "geom2_point_varcoef",
+"classed": "geom3_point_varcoef",
 "aes": {
- "x": "coef",
+ "x": "norm.coef",
 "y": "var" 
 },
 "params": {
@@ -67,9 +107,9 @@
 "chunks": 1,
 "total": 1 
 },
-"geom3_segment_varcoef": {
+"geom4_segment_varcoef": {
  "geom": "segment",
-"classed": "geom3_segment_varcoef",
+"classed": "geom4_segment_varcoef",
 "aes": {
  "x": "-Inf",
 "y": "var",
@@ -105,9 +145,9 @@
 "chunks": 1,
 "total": 1 
 },
-"geom4_tile_coefvec": {
+"geom5_tile_coefvec": {
  "geom": "rect",
-"classed": "geom4_tile_coefvec",
+"classed": "geom5_tile_coefvec",
 "aes": {
  "x": "1",
 "y": "var.order",
@@ -148,13 +188,14 @@
 "chunks": 1,
 "total": 1 
 },
-"geom5_text_coefvec": {
+"geom6_text_coefvec": {
  "geom": "text",
-"classed": "geom5_text_coefvec",
+"classed": "geom6_text_coefvec",
 "aes": {
  "x": "2",
-"y": "var.order",
+"y": "var.order - 0.3",
 "label": "corr.var",
+"clickSelects": "corr.var",
 "showSelected1": "var" 
 },
 "params": {
@@ -164,12 +205,14 @@
 "na.rm": false,
 "size":       10,
 "showSelected": "var",
+"clickSelects": "corr.var",
 "anchor": "start" 
 },
 "types": {
  "x": "numeric",
 "y": "numeric",
 "label": "character",
+"clickSelects": "character",
 "showSelected1": "factor",
 "PANEL": "integer",
 "group": "character" 
@@ -184,9 +227,9 @@
 "chunks": 1,
 "total": 1 
 },
-"geom6_point_varscatter": {
+"geom7_point_varscatter": {
  "geom": "point",
-"classed": "geom6_point_varscatter",
+"classed": "geom7_point_varscatter",
 "aes": {
  "x": "var.val",
 "y": "corr.var.val",
@@ -246,9 +289,9 @@
 },
 "total": 19 
 },
-"geom7_label_varscatter": {
+"geom8_label_varscatter": {
  "geom": "label",
-"classed": "geom7_label_varscatter",
+"classed": "geom8_label_varscatter",
 "aes": {
  "label": "var" 
 },
@@ -275,9 +318,9 @@
 "chunks": 1,
 "total": 1 
 },
-"geom8_label_varscatter": {
+"geom9_label_varscatter": {
  "geom": "label",
-"classed": "geom8_label_varscatter",
+"classed": "geom9_label_varscatter",
 "aes": {
  "label": "corr.var" 
 },
@@ -311,7 +354,22 @@
 "corr.var":     1000 
 },
 "selectors": {
- "var": {
+ "corr.var": {
+ "is.variable.value": false,
+"type": "single",
+"showSelected": true,
+"clickSelects": true,
+"selected": "Administer.Self.Assessment.Practice.Profile.at....",
+"levels": [ "Administer.Self.Assessment.Practice.Profile.at....", "Designate.building.level.contact.person..for.ea...", "Develop.a.district.wide.plan.for.consistent.and...", "Develop.and.implement.protocol.for.conducting.w...", "Develop.protocol.for.maintaining.ongoing.commun...", "Develop.timelines.and.expectations.aligning.imp...", "Establish.district..and.building.level.goal.s.....", "Form.district.leadership.team..DLT....see.Bluep...", "Identify.a.process.for.monitoring.progress.of.t...", "Revisit.and.revise.PD.plans.based.on.data.", "Support.the.use.of.data..e.g..SAPP..CWIS..to.in...", "Participate.in.regional..cadre..and.state.event...", "Use.technology.to.increase.the.quality.and.time...", "Align.implementation.goals.with.CSIP..Comprehen...", "Administer.implementation.survey..e.g..Collabor...", "Annually..summarize.district.wide.fidelity.and....", "Designate.district.level.contact.person.", "Teacher.leader.growth.mindset.In.Place", "Total.amount.in.place" ],
+"update": [
+ "geom1_segment_varcoef",
+"geom5_tile_coefvec",
+"geom6_text_coefvec",
+"geom7_point_varscatter" 
+],
+"duration":     1000 
+},
+"var": {
  "is.variable.value": false,
 "type": "single",
 "showSelected": true,
@@ -320,24 +378,11 @@
 "selected": "Form.district.leadership.team..DLT....see.Bluep...",
 "levels": [ "Form.district.leadership.team..DLT....see.Bluep...", "Designate.district.level.contact.person.", "Designate.building.level.contact.person..for.ea...", "Develop.protocol.for.maintaining.ongoing.commun...", "Develop.a.district.wide.plan.for.consistent.and...", "Identify.a.process.for.monitoring.progress.of.t...", "Administer.Self.Assessment.Practice.Profile.at....", "Administer.implementation.survey..e.g..Collabor...", "Use.technology.to.increase.the.quality.and.time...", "Participate.in.regional..cadre..and.state.event...", "Support.the.use.of.data..e.g..SAPP..CWIS..to.in...", "Develop.and.implement.protocol.for.conducting.w...", "Annually..summarize.district.wide.fidelity.and....", "Establish.district..and.building.level.goal.s.....", "Revisit.and.revise.PD.plans.based.on.data.", "Develop.timelines.and.expectations.aligning.imp...", "Align.implementation.goals.with.CSIP..Comprehen...", "Teacher.leader.growth.mindset.In.Place", "Total.amount.in.place" ],
 "update": [
- "geom1_segment_varcoef",
-"geom3_segment_varcoef",
-"geom4_tile_coefvec",
-"geom5_text_coefvec",
-"geom6_point_varscatter" 
-],
-"duration":     1000 
-},
-"corr.var": {
- "is.variable.value": false,
-"type": "single",
-"clickSelects": true,
-"showSelected": true,
-"selected": "Administer.Self.Assessment.Practice.Profile.at....",
-"levels": [ "Administer.Self.Assessment.Practice.Profile.at....", "Administer.implementation.survey..e.g..Collabor...", "Align.implementation.goals.with.CSIP..Comprehen...", "Annually..summarize.district.wide.fidelity.and....", "Designate.building.level.contact.person..for.ea...", "Designate.district.level.contact.person.", "Develop.a.district.wide.plan.for.consistent.and...", "Develop.and.implement.protocol.for.conducting.w...", "Develop.protocol.for.maintaining.ongoing.commun...", "Develop.timelines.and.expectations.aligning.imp...", "Establish.district..and.building.level.goal.s.....", "Form.district.leadership.team..DLT....see.Bluep...", "Identify.a.process.for.monitoring.progress.of.t...", "Participate.in.regional..cadre..and.state.event...", "Revisit.and.revise.PD.plans.based.on.data.", "Support.the.use.of.data..e.g..SAPP..CWIS..to.in...", "Use.technology.to.increase.the.quality.and.time...", "Teacher.leader.growth.mindset.In.Place", "Total.amount.in.place" ],
-"update": [
- "geom4_tile_coefvec",
-"geom6_point_varscatter" 
+ "geom2_segment_varcoef",
+"geom4_segment_varcoef",
+"geom5_tile_coefvec",
+"geom6_text_coefvec",
+"geom7_point_varscatter" 
 ],
 "duration":     1000 
 } 
@@ -434,32 +479,24 @@
 "loc": {
  "x": [
  [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ],
 [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ],
 [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ],
 [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ] 
 ],
 "y": [
@@ -499,52 +536,36 @@
 "loc": {
  "x": [
  [
-   -0.075,
- -0.0625,
-   -0.05,
- -0.0375,
-  -0.025,
- -0.0125,
+    -0.02,
+   -0.01,
        0,
-  0.0125,
-   0.025,
-  0.0375 
+    0.01,
+    0.02,
+    0.03 
 ],
 [
-   -0.075,
- -0.0625,
-   -0.05,
- -0.0375,
-  -0.025,
- -0.0125,
+    -0.02,
+   -0.01,
        0,
-  0.0125,
-   0.025,
-  0.0375 
+    0.01,
+    0.02,
+    0.03 
 ],
 [
-   -0.075,
- -0.0625,
-   -0.05,
- -0.0375,
-  -0.025,
- -0.0125,
+    -0.02,
+   -0.01,
        0,
-  0.0125,
-   0.025,
-  0.0375 
+    0.01,
+    0.02,
+    0.03 
 ],
 [
-   -0.075,
- -0.0625,
-   -0.05,
- -0.0375,
-  -0.025,
- -0.0125,
+    -0.02,
+   -0.01,
        0,
-  0.0125,
-   0.025,
-  0.0375 
+    0.01,
+    0.02,
+    0.03 
 ] 
 ],
 "y": [
@@ -557,20 +578,16 @@
 },
 "axis1": {
  "x": [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ],
 "xlab": [
- "-0.075",
-"-0.050",
-"-0.025",
-"0.000",
-"0.025" 
+ "-0.02",
+"0.00",
+"0.02" 
 ],
-"xrange": [ -0.07518701, 0.03759563 ],
+"xrange": [ -0.02187243, 0.03610483 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -605,20 +622,16 @@
 },
 "axis2": {
  "x": [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ],
 "xlab": [
- "-0.075",
-"-0.050",
-"-0.025",
-"0.000",
-"0.025" 
+ "-0.02",
+"0.00",
+"0.02" 
 ],
-"xrange": [ -0.07518701, 0.03759563 ],
+"xrange": [ -0.02187243, 0.03610483 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -635,20 +648,16 @@
 },
 "axis3": {
  "x": [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ],
 "xlab": [
- "-0.075",
-"-0.050",
-"-0.025",
-"0.000",
-"0.025" 
+ "-0.02",
+"0.00",
+"0.02" 
 ],
-"xrange": [ -0.07518701, 0.03759563 ],
+"xrange": [ -0.02187243, 0.03610483 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -663,20 +672,16 @@
 },
 "axis4": {
  "x": [
-   -0.075,
-   -0.05,
-  -0.025,
+    -0.02,
        0,
-   0.025 
+    0.02 
 ],
 "xlab": [
- "-0.075",
-"-0.050",
-"-0.025",
-"0.000",
-"0.025" 
+ "-0.02",
+"0.00",
+"0.02" 
 ],
-"xrange": [ -0.07518701, 0.03759563 ],
+"xrange": [ -0.02187243, 0.03610483 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -700,11 +705,9 @@
 "yanchor": "end",
 "yangle":        0,
 "xlabs": [
- "-0.075",
-"-0.050",
-"-0.025",
-"0.000",
-"0.025" 
+ "-0.02",
+"0.00",
+"0.02" 
 ],
 "ylabs": [
  "Administer.Self.Assessment.Practice.Profile.at....",
@@ -731,8 +734,9 @@
 },
 "geoms": [
  "geom1_segment_varcoef",
-"geom2_point_varcoef",
-"geom3_segment_varcoef" 
+"geom2_segment_varcoef",
+"geom3_point_varcoef",
+"geom4_segment_varcoef" 
 ] 
 },
 "coefvec": {
@@ -857,8 +861,8 @@
 "height":      400 
 },
 "geoms": [
- "geom4_tile_coefvec",
-"geom5_text_coefvec" 
+ "geom5_tile_coefvec",
+"geom6_text_coefvec" 
 ] 
 },
 "varscatter": {
@@ -4642,10 +4646,11 @@
 } 
 },
 "geoms": [
- "geom6_point_varscatter",
-"geom7_label_varscatter",
-"geom8_label_varscatter" 
+ "geom7_point_varscatter",
+"geom8_label_varscatter",
+"geom9_label_varscatter" 
 ] 
 } 
-} 
+},
+"title": "Correlation of Integration Checklist Variables with GLM models" 
 }

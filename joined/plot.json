@@ -23288,5 +23288,6 @@
 "geom8_label_varscatter" 
 ] 
 } 
-} 
+},
+"title": "Correlation of Full Data Set Variables with GLM models" 
 }
