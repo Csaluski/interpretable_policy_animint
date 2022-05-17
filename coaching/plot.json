@@ -344,62 +344,83 @@
 },
 "total": 32 
 },
-"geom8_label_varscatter": {
- "geom": "label",
-"classed": "geom8_label_varscatter",
+"geom8_text_varscatter": {
+ "geom": "text",
+"classed": "geom8_text_varscatter",
 "aes": {
- "label": "var" 
+ "x": "var.x",
+"y": "var.y",
+"label": "var",
+"showSelected1": "var",
+"showSelected2": "corr.var" 
 },
 "params": {
  "parse": false,
-"label.padding":     0.25,
-"label.r":     0.15,
-"label.size":     0.25,
+"check_overlap": false,
 "na.rm": false,
 "na.rm": false,
-"x":        0,
-"y":        0 
+"colour": "#FF0000",
+"showSelected": [ "var", "corr.var" ] 
 },
 "types": {
- "label": "factor",
+ "x": "numeric",
+"y": "numeric",
+"label": "factor",
+"showSelected1": "factor",
+"showSelected2": "character",
 "PANEL": "integer",
-"group": "character",
-"x": "numeric",
-"y": "numeric" 
+"group": "character" 
 },
 "chunk_order": [],
-"nest_order": [],
-"subset_order": [],
+"nest_order": [
+ "showSelected1",
+"showSelected2" 
+],
+"subset_order": [
+ "showSelected1",
+"showSelected2" 
+],
 "chunks": 1,
 "total": 1 
 },
-"geom9_label_varscatter": {
- "geom": "label",
-"classed": "geom9_label_varscatter",
+"geom9_text_varscatter": {
+ "geom": "text",
+"classed": "geom9_text_varscatter",
 "aes": {
- "label": "corr.var" 
+ "x": "corr.x",
+"y": "corr.y",
+"label": "corr.var",
+"angle": "90",
+"showSelected1": "var",
+"showSelected2": "corr.var" 
 },
 "params": {
  "parse": false,
-"label.padding":     0.25,
-"label.r":     0.15,
-"label.size":     0.25,
+"check_overlap": false,
 "na.rm": false,
 "na.rm": false,
-"x":        0,
-"y":        0,
-"angle":       90 
+"colour": "#FF0000",
+"showSelected": [ "var", "corr.var" ] 
 },
 "types": {
- "label": "character",
+ "x": "numeric",
+"y": "numeric",
+"label": "character",
+"angle": "numeric",
+"showSelected1": "factor",
+"showSelected2": "character",
 "PANEL": "integer",
-"group": "character",
-"x": "numeric",
-"y": "numeric" 
+"group": "character" 
 },
 "chunk_order": [],
-"nest_order": [],
-"subset_order": [],
+"nest_order": [
+ "showSelected1",
+"showSelected2" 
+],
+"subset_order": [
+ "showSelected1",
+"showSelected2" 
+],
 "chunks": 1,
 "total": 1 
 } 
@@ -420,7 +441,9 @@
  "geom1_segment_varcoef",
 "geom5_tile_coefvec",
 "geom6_text_coefvec",
-"geom7_point_varscatter" 
+"geom7_point_varscatter",
+"geom8_text_varscatter",
+"geom9_text_varscatter" 
 ],
 "duration":     1000 
 },
@@ -437,7 +460,9 @@
 "geom4_segment_varcoef",
 "geom5_tile_coefvec",
 "geom6_text_coefvec",
-"geom7_point_varscatter" 
+"geom7_point_varscatter",
+"geom8_text_varscatter",
+"geom9_text_varscatter" 
 ],
 "duration":     1000 
 } 
@@ -1072,7 +1097,7 @@
 "yline": true,
 "yticks": true 
 },
-"xtitle": "Variable coefficient",
+"xtitle": "Normalized linear model coefficient",
 "xanchor": "middle",
 "xangle":        0,
 "ytitle": "Variable",
@@ -1149,7 +1174,7 @@
 "AXIS_X": [ true ],
 "AXIS_Y": [ true ],
 "coord_fixed": [ true ],
-"width_proportion": [     0.05 ],
+"width_proportion": [ 0.6666667 ],
 "height_proportion": [        1 ] 
 },
 "panel_background": {
@@ -1167,10 +1192,11 @@
 "loc": {
  "x": [
  [
-      0.5,
-       1,
-     1.5,
-       2 
+        0,
+       5,
+      10,
+      15,
+      20 
 ] 
 ],
 "y": [
@@ -1191,13 +1217,15 @@
 "loc": {
  "x": [
  [
-      0.5,
-    0.75,
-       1,
-    1.25,
-     1.5,
-    1.75,
-       2 
+        0,
+     2.5,
+       5,
+     7.5,
+      10,
+    12.5,
+      15,
+    17.5,
+      20 
 ] 
 ],
 "y": [
@@ -1215,12 +1243,13 @@
 },
 "axis1": {
  "x": [
-      0.5,
-       1,
-     1.5,
-       2 
+        0,
+       5,
+      10,
+      15,
+      20 
 ],
-"xrange": [    0.425,    2.075 ],
+"xrange": [       -1,       21 ],
 "xline": true,
 "xticks": false,
 "y": [
@@ -1236,7 +1265,7 @@
 "xtitle": "",
 "xanchor": "middle",
 "xangle":        0,
-"ytitle": "var.order",
+"ytitle": "Correlating variables ordered by absolute value of correlation",
 "yanchor": "middle",
 "yangle":        0,
 "xlabs": [],
@@ -11673,8 +11702,8 @@
 },
 "geoms": [
  "geom7_point_varscatter",
-"geom8_label_varscatter",
-"geom9_label_varscatter" 
+"geom8_text_varscatter",
+"geom9_text_varscatter" 
 ] 
 } 
 },
