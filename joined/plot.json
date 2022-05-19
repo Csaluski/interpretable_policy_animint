@@ -49,6 +49,7 @@
 "yend": "corr.var",
 "xend": "Inf",
 "colour": "corr.coef",
+"tooltip": "corr.coef",
 "showSelected1": "var" 
 },
 "params": {
@@ -64,6 +65,7 @@
 "xend": "numeric",
 "y": "integer",
 "yend": "integer",
+"tooltip": "numeric",
 "showSelected1": "factor",
 "PANEL": "factor",
 "group": "character" 
@@ -80,36 +82,9 @@
 "chunks": 1,
 "total": 1 
 },
-"geom3_point_varcoef": {
- "geom": "point",
-"classed": "geom3_point_varcoef",
-"aes": {
- "x": "norm.coef",
-"y": "var" 
-},
-"params": {
- "na.rm": false,
-"na.rm": false 
-},
-"types": {
- "x": "numeric",
-"y": "integer",
-"PANEL": "factor",
-"group": "character" 
-},
-"chunk_order": [],
-"nest_order": [
- "PANEL" 
-],
-"subset_order": [
- "PANEL" 
-],
-"chunks": 1,
-"total": 1 
-},
-"geom4_segment_varcoef": {
+"geom3_segment_varcoef": {
  "geom": "segment",
-"classed": "geom4_segment_varcoef",
+"classed": "geom3_segment_varcoef",
 "aes": {
  "x": "-Inf",
 "y": "var",
@@ -145,14 +120,76 @@
 "chunks": 1,
 "total": 1 
 },
-"geom5_tile_coefvec": {
+"geom4_point_varcoef": {
+ "geom": "point",
+"classed": "geom4_point_varcoef",
+"aes": {
+ "x": "norm.coef",
+"y": "var",
+"tooltip": "norm.coef" 
+},
+"params": {
+ "na.rm": false,
+"na.rm": false 
+},
+"types": {
+ "x": "numeric",
+"y": "integer",
+"tooltip": "numeric",
+"PANEL": "factor",
+"group": "character" 
+},
+"chunk_order": [],
+"nest_order": [
+ "PANEL" 
+],
+"subset_order": [
+ "PANEL" 
+],
+"chunks": 1,
+"total": 1 
+},
+"geom5_point_varcoef": {
+ "geom": "point",
+"classed": "geom5_point_varcoef",
+"aes": {
+ "x": "mean",
+"y": "var",
+"tooltip": "paste0(\"mean = \", mean)" 
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"colour": "#0000FF",
+"size":        5,
+"alpha":      0.5 
+},
+"types": {
+ "x": "numeric",
+"y": "integer",
+"tooltip": "character",
+"PANEL": "factor",
+"group": "character" 
+},
+"chunk_order": [],
+"nest_order": [
+ "PANEL" 
+],
+"subset_order": [
+ "PANEL" 
+],
+"chunks": 1,
+"total": 1 
+},
+"geom6_tile_coefvec": {
  "geom": "rect",
-"classed": "geom5_tile_coefvec",
+"classed": "geom6_tile_coefvec",
 "aes": {
  "x": "1",
-"y": "var.order",
+"y": "-var.order",
 "fill": "corr.coef",
 "key": "corr.var",
+"tooltip": "corr.coef",
 "clickSelects": "corr.var",
 "showSelected1": "var" 
 },
@@ -167,6 +204,7 @@
 "x": "numeric",
 "y": "numeric",
 "key": "character",
+"tooltip": "numeric",
 "clickSelects": "character",
 "showSelected1": "factor",
 "PANEL": "integer",
@@ -188,13 +226,14 @@
 "chunks": 1,
 "total": 1 
 },
-"geom6_text_coefvec": {
+"geom7_text_coefvec": {
  "geom": "text",
-"classed": "geom6_text_coefvec",
+"classed": "geom7_text_coefvec",
 "aes": {
  "x": "2",
-"y": "var.order - 0.3",
+"y": "-(var.order + 0.3)",
 "label": "corr.var",
+"tooltip": "corr.coef",
 "clickSelects": "corr.var",
 "showSelected1": "var" 
 },
@@ -212,6 +251,7 @@
  "x": "numeric",
 "y": "numeric",
 "label": "character",
+"tooltip": "numeric",
 "clickSelects": "character",
 "showSelected1": "factor",
 "PANEL": "integer",
@@ -227,24 +267,30 @@
 "chunks": 1,
 "total": 1 
 },
-"geom7_point_varscatter": {
+"geom8_point_varscatter": {
  "geom": "point",
-"classed": "geom7_point_varscatter",
+"classed": "geom8_point_varscatter",
 "aes": {
  "x": "var.val",
 "y": "corr.var.val",
+"tooltip": "paste(State.District.ID, year)",
+"clickSelects": "State.District.ID",
 "showSelected1": "var",
 "showSelected2": "corr.var" 
 },
 "params": {
  "na.rm": false,
 "na.rm": false,
+"alpha":      0.6,
+"clickSelects": "State.District.ID",
 "showSelected": [ "var", "corr.var" ],
 "chunk_vars": "var" 
 },
 "types": {
  "x": "numeric",
 "y": "numeric",
+"tooltip": "character",
+"clickSelects": "character",
 "showSelected1": "factor",
 "showSelected2": "factor",
 "PANEL": "integer",
@@ -261,7 +307,8 @@
 ],
 "columns": {
  "common": [
- "y",
+ "tooltip",
+"clickSelects",
 "showSelected2",
 "group" 
 ] 
@@ -317,9 +364,9 @@
 },
 "total": 47 
 },
-"geom8_text_varscatter": {
+"geom9_text_varscatter": {
  "geom": "text",
-"classed": "geom8_text_varscatter",
+"classed": "geom9_text_varscatter",
 "aes": {
  "x": "var.x",
 "y": "var.y",
@@ -412,9 +459,9 @@
 },
 "total": 47 
 },
-"geom9_text_varscatter": {
+"geom10_text_varscatter": {
  "geom": "text",
-"classed": "geom9_text_varscatter",
+"classed": "geom10_text_varscatter",
 "aes": {
  "x": "corr.x",
 "y": "corr.y",
@@ -522,14 +569,14 @@
 "clickSelects": true,
 "chunks": "corr.var",
 "selected": "Participate.in.regional..cadre..and.state.event...",
-"levels": [ "Participate.in.regional..cadre..and.state.event...", "Total.Students..All.Grades..Excludes.AE...Public.School..sd", "Use.technology.to.increase.the.quality.and.time...", "Free.and.Reduced.Lunch.Students..Public.School..sd", "Full.Time.Equivalent..FTE..Teachers..Public.School..mean", "Rural..Remote", "Full.Time.Equivalent..FTE..Teachers..Public.School..sd", "Reduced.Lunch.Eligible.min", "Free.Lunch.Eligible.sd", "Town..Distant", "City..Large", "Full.Time.Equivalent..FTE..Teachers..Public.School..median", "Rural..Distant", "Free.Reduced.Lunch.Rate.sd", "Suburb..Large", "Align.implementation.goals.with.CSIP..Comprehen...", "Administer.implementation.survey..e.g..Collabor...", "Annually..summarize.district.wide.fidelity.and....", "DBDM_avg", "Designate.district.level.contact.person.", "Free.Lunch.Eligible.median", "PD_avg", "CFA_avg", "ETLP_avg", "Leadership_avg", "Total.Students..All.Grades..Excludes.AE...Public.School..mean", "Total.Students..All.Grades..Excludes.AE...Public.School..median", "Full.Time.Equivalent..FTE..Teachers..Public.School..min", "Full.Time.Equivalent..FTE..Teachers..Public.School..max", "Pupil.Teacher.Ratio..Public.School..min", "Pupil.Teacher.Ratio..Public.School..max", "Pupil.Teacher.Ratio..Public.School..mean", "Pupil.Teacher.Ratio..Public.School..sd", "Pupil.Teacher.Ratio..Public.School..median", "Free.Lunch.Eligible.mean", "Reduced.Lunch.Eligible.mean", "Reduced.Lunch.Eligible.sd", "Reduced.Lunch.Eligible.median", "Total.Students.mean", "Total.Students.sd", "Total.Students.median", "Free.and.Reduced.Lunch.Students..Public.School..mean", "Free.and.Reduced.Lunch.Students..Public.School..median", "Free.Reduced.Lunch.Rate.min", "Free.Reduced.Lunch.Rate.max", "Free.Reduced.Lunch.Rate.mean", "Free.Reduced.Lunch.Rate.median" ],
+"levels": [ "Participate.in.regional..cadre..and.state.event...", "Total.Students..All.Grades..Excludes.AE...Public.School..sd", "Use.technology.to.increase.the.quality.and.time...", "Free.and.Reduced.Lunch.Students..Public.School..sd", "Full.Time.Equivalent..FTE..Teachers..Public.School..mean", "Rural..Remote", "Full.Time.Equivalent..FTE..Teachers..Public.School..sd", "Reduced.Lunch.Eligible.min", "Free.Lunch.Eligible.sd", "Town..Distant", "City..Large", "Full.Time.Equivalent..FTE..Teachers..Public.School..median", "Rural..Distant", "Free.Reduced.Lunch.Rate.sd", "Suburb..Large", "Align.implementation.goals.with.CSIP..Comprehen...", "Administer.implementation.survey..e.g..Collabor...", "Annually..summarize.district.wide.fidelity.and....", "DBDM_avg", "Designate.district.level.contact.person.", "Free.Lunch.Eligible.median", "PD_avg", "ETLP_avg", "CFA_avg", "Leadership_avg", "Total.Students..All.Grades..Excludes.AE...Public.School..mean", "Total.Students..All.Grades..Excludes.AE...Public.School..median", "Full.Time.Equivalent..FTE..Teachers..Public.School..min", "Full.Time.Equivalent..FTE..Teachers..Public.School..max", "Pupil.Teacher.Ratio..Public.School..min", "Pupil.Teacher.Ratio..Public.School..max", "Pupil.Teacher.Ratio..Public.School..mean", "Pupil.Teacher.Ratio..Public.School..sd", "Pupil.Teacher.Ratio..Public.School..median", "Free.Lunch.Eligible.mean", "Reduced.Lunch.Eligible.mean", "Reduced.Lunch.Eligible.sd", "Reduced.Lunch.Eligible.median", "Total.Students.mean", "Total.Students.sd", "Total.Students.median", "Free.and.Reduced.Lunch.Students..Public.School..mean", "Free.and.Reduced.Lunch.Students..Public.School..median", "Free.Reduced.Lunch.Rate.min", "Free.Reduced.Lunch.Rate.max", "Free.Reduced.Lunch.Rate.mean", "Free.Reduced.Lunch.Rate.median" ],
 "update": [
  "geom1_segment_varcoef",
-"geom5_tile_coefvec",
-"geom6_text_coefvec",
-"geom7_point_varscatter",
-"geom8_text_varscatter",
-"geom9_text_varscatter" 
+"geom6_tile_coefvec",
+"geom7_text_coefvec",
+"geom8_point_varscatter",
+"geom9_text_varscatter",
+"geom10_text_varscatter" 
 ],
 "duration":     1000 
 },
@@ -543,14 +590,24 @@
 "levels": [ "Designate.district.level.contact.person.", "Administer.implementation.survey..e.g..Collabor...", "Use.technology.to.increase.the.quality.and.time...", "Participate.in.regional..cadre..and.state.event...", "Annually..summarize.district.wide.fidelity.and....", "Align.implementation.goals.with.CSIP..Comprehen...", "CFA_avg", "ETLP_avg", "DBDM_avg", "PD_avg", "Leadership_avg", "Total.Students..All.Grades..Excludes.AE...Public.School..mean", "Total.Students..All.Grades..Excludes.AE...Public.School..sd", "Total.Students..All.Grades..Excludes.AE...Public.School..median", "Full.Time.Equivalent..FTE..Teachers..Public.School..min", "Full.Time.Equivalent..FTE..Teachers..Public.School..max", "Full.Time.Equivalent..FTE..Teachers..Public.School..mean", "Full.Time.Equivalent..FTE..Teachers..Public.School..sd", "Full.Time.Equivalent..FTE..Teachers..Public.School..median", "Pupil.Teacher.Ratio..Public.School..min", "Pupil.Teacher.Ratio..Public.School..max", "Pupil.Teacher.Ratio..Public.School..mean", "Pupil.Teacher.Ratio..Public.School..sd", "Pupil.Teacher.Ratio..Public.School..median", "Free.Lunch.Eligible.mean", "Free.Lunch.Eligible.sd", "Free.Lunch.Eligible.median", "Reduced.Lunch.Eligible.min", "Reduced.Lunch.Eligible.mean", "Reduced.Lunch.Eligible.sd", "Reduced.Lunch.Eligible.median", "Total.Students.mean", "Total.Students.sd", "Total.Students.median", "Free.and.Reduced.Lunch.Students..Public.School..mean", "Free.and.Reduced.Lunch.Students..Public.School..sd", "Free.and.Reduced.Lunch.Students..Public.School..median", "Free.Reduced.Lunch.Rate.min", "Free.Reduced.Lunch.Rate.max", "Free.Reduced.Lunch.Rate.mean", "Free.Reduced.Lunch.Rate.sd", "Free.Reduced.Lunch.Rate.median", "City..Large", "Rural..Distant", "Rural..Remote", "Suburb..Large", "Town..Distant" ],
 "update": [
  "geom2_segment_varcoef",
-"geom4_segment_varcoef",
-"geom5_tile_coefvec",
-"geom6_text_coefvec",
-"geom7_point_varscatter",
-"geom8_text_varscatter",
-"geom9_text_varscatter" 
+"geom3_segment_varcoef",
+"geom6_tile_coefvec",
+"geom7_text_coefvec",
+"geom8_point_varscatter",
+"geom9_text_varscatter",
+"geom10_text_varscatter" 
 ],
 "duration":     1000 
+},
+"State.District.ID": {
+ "is.variable.value": false,
+"type": "single",
+"clickSelects": true,
+"selected": "MO-001090",
+"levels": [ "MO-001090", "MO-002097", "MO-003031", "MO-003032", "MO-004106", "MO-004110", "MO-005121", "MO-005123", "MO-008107", "MO-009080", "MO-010089", "MO-011079", "MO-012108", "MO-012109", "MO-014126", "MO-014127", "MO-014129", "MO-014130", "MO-015002", "MO-015004", "MO-016096", "MO-017125", "MO-017126", "MO-018047", "MO-018050", "MO-019142", "MO-019144", "MO-019152", "MO-021149", "MO-022090", "MO-022094", "MO-023101", "MO-024087", "MO-024089", "MO-026001", "MO-027057", "MO-028101", "MO-028102", "MO-028103", "MO-029004", "MO-033090", "MO-033092", "MO-033094", "MO-034124", "MO-035092", "MO-035099", "MO-035102", "MO-036126", "MO-036131", "MO-036133", "MO-036135", "MO-036137", "MO-037037", "MO-039136", "MO-040107", "MO-041002", "MO-041005", "MO-042113", "MO-042117", "MO-042118", "MO-042124", "MO-044083", "MO-045077", "MO-046131", "MO-046137", "MO-047065", "MO-048066", "MO-048072", "MO-048074", "MO-048902", "MO-049142", "MO-050001", "MO-050002", "MO-050006", "MO-050007", "MO-051152", "MO-051159", "MO-054041", "MO-054043", "MO-055105", "MO-055110", "MO-056017", "MO-057004", "MO-058106", "MO-058107", "MO-058108", "MO-058112", "MO-059117", "MO-060077", "MO-062070", "MO-062072", "MO-063066", "MO-063067", "MO-064074", "MO-064075", "MO-067061", "MO-069107", "MO-069108", "MO-072066", "MO-072074", "MO-073102", "MO-073108", "MO-074190", "MO-074197", "MO-074201", "MO-075086", "MO-076081", "MO-076082", "MO-077104", "MO-078002", "MO-078003", "MO-078009", "MO-078012", "MO-079077", "MO-080122", "MO-080125", "MO-081094", "MO-081097", "MO-082100", "MO-082101", "MO-082108", "MO-084004", "MO-085044", "MO-085045", "MO-085046", "MO-085048", "MO-085049", "MO-087083", "MO-088072", "MO-088073", "MO-088075", "MO-090076", "MO-092087", "MO-092089", "MO-092090", "MO-092091", "MO-093120", "MO-094076", "MO-094078", "MO-094083", "MO-094086", "MO-096088", "MO-096099", "MO-096107", "MO-096109", "MO-096114", "MO-097119", "MO-097129", "MO-099082", "MO-100059", "MO-100062", "MO-100063", "MO-105124", "MO-105125", "MO-107152", "MO-107156", "MO-107158", "MO-108144", "MO-109002", "MO-110014", "MO-110029", "MO-110030", "MO-112099", "MO-113001", "MO-114114", "MO-115902", "MO-115906", "MO-115928" ],
+"update": [
+ "geom8_point_varscatter" 
+] 
 } 
 },
 "plots": {
@@ -608,10 +665,12 @@
 "6",
 "8",
 "9",
-"10" 
+"10",
+"NA" 
 ],
 "top": [
  "",
+"",
 "",
 "",
 "",
@@ -626,17 +685,17 @@
 } 
 },
 "layout": {
- "PANEL": [ "1", "2", "3", "4", "5", "6", "7", "8" ],
-"ROW": [ 1, 2, 3, 4, 5, 6, 7, 8 ],
-"COL": [ 1, 1, 1, 1, 1, 1, 1, 1 ],
-"count": [ 1, 2, 3, 5, 6, 8, 9, 10 ],
-"SCALE_X": [ 1, 1, 1, 1, 1, 1, 1, 1 ],
-"SCALE_Y": [ 1, 2, 3, 4, 5, 6, 7, 8 ],
-"AXIS_Y": [ true, true, true, true, true, true, true, true ],
-"AXIS_X": [ false, false, false, false, false, false, false, true ],
-"coord_fixed": [ false, false, false, false, false, false, false, false ],
-"width_proportion": [        1,        1,        1,        1,        1,        1,        1,        1 ],
-"height_proportion": [ 0.1355932, 0.1355932, 0.09322034, 0.09322034, 0.1355932, 0.09322034, 0.05084746, 0.2627119 ] 
+ "PANEL": [ "1", "2", "3", "4", "5", "6", "7", "8", "9" ],
+"ROW": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
+"COL": [ 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+"count": [ 1, 2, 3, 5, 6, 8, 9, 10, null ],
+"SCALE_X": [ 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+"SCALE_Y": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
+"AXIS_Y": [ true, true, true, true, true, true, true, true, true ],
+"AXIS_X": [ false, false, false, false, false, false, false, false, true ],
+"coord_fixed": [ false, false, false, false, false, false, false, false, false ],
+"width_proportion": [        1,        1,        1,        1,        1,        1,        1,        1,        1 ],
+"height_proportion": [ 0.1290323, 0.1290323, 0.08870968, 0.08870968, 0.1290323, 0.08870968, 0.0483871,     0.25, 0.0483871 ] 
 },
 "panel_background": {
  "fill": "#EBEBEB",
@@ -653,6 +712,13 @@
 "loc": {
  "x": [
  [
+        0,
+    0.05,
+     0.1,
+    0.15,
+     0.2 
+],
+[
         0,
     0.05,
      0.1,
@@ -747,6 +813,9 @@
 4,
 5,
 6 
+],
+[
+ 1 
 ] 
 ] 
 } 
@@ -853,10 +922,23 @@
     0.15,
    0.175,
      0.2 
+],
+[
+   -0.025,
+       0,
+   0.025,
+    0.05,
+   0.075,
+     0.1,
+   0.125,
+    0.15,
+   0.175,
+     0.2 
 ] 
 ],
 "y": [
  [],
+[],
 [],
 [],
 [],
@@ -1119,6 +1201,34 @@
 "yline": true,
 "yticks": true 
 },
+"axis9": {
+ "x": [
+        0,
+    0.05,
+     0.1,
+    0.15,
+     0.2 
+],
+"xlab": [
+ "0.00",
+"0.05",
+"0.10",
+"0.15",
+"0.20" 
+],
+"xrange": [ -0.03020008, 0.2109853 ],
+"xline": true,
+"xticks": true,
+"y": [
+ 1 
+],
+"ylab": [
+ "ETLP_avg" 
+],
+"yrange": [      0.4,      1.6 ],
+"yline": true,
+"yticks": true 
+},
 "xtitle": "Normalized linear model coefficient",
 "xanchor": "middle",
 "xangle":        0,
@@ -1154,7 +1264,8 @@
 "DBDM_avg",
 "Designate.district.level.contact.person.",
 "Free.Lunch.Eligible.median",
-"PD_avg" 
+"PD_avg",
+"ETLP_avg" 
 ],
 "options": {
  "width":      800,
@@ -1163,8 +1274,9 @@
 "geoms": [
  "geom1_segment_varcoef",
 "geom2_segment_varcoef",
-"geom3_point_varcoef",
-"geom4_segment_varcoef" 
+"geom3_segment_varcoef",
+"geom4_point_varcoef",
+"geom5_point_varcoef" 
 ] 
 },
 "coefvec": {
@@ -1190,7 +1302,7 @@
 "AXIS_X": [ true ],
 "AXIS_Y": [ true ],
 "coord_fixed": [ true ],
-"width_proportion": [ 0.9090909 ],
+"width_proportion": [ 0.8695652 ],
 "height_proportion": [        1 ] 
 },
 "panel_background": {
@@ -1217,11 +1329,11 @@
 ],
 "y": [
  [
-        0,
-       5,
-      10,
-      15,
-      20 
+      -20,
+     -15,
+     -10,
+      -5,
+       0 
 ] 
 ] 
 } 
@@ -1247,16 +1359,16 @@
 ],
 "y": [
  [
-        0,
-     2.5,
-       5,
-     7.5,
-      10,
-    12.5,
-      15,
-    17.5,
-      20,
-    22.5 
+    -22.5,
+     -20,
+   -17.5,
+     -15,
+   -12.5,
+     -10,
+    -7.5,
+      -5,
+    -2.5,
+       0 
 ] 
 ] 
 } 
@@ -1273,13 +1385,13 @@
 "xline": true,
 "xticks": false,
 "y": [
-        0,
-       5,
-      10,
-      15,
-      20 
+      -20,
+     -15,
+     -10,
+      -5,
+       0 
 ],
-"yrange": [     -0.6,     23.6 ],
+"yrange": [   -24.65,     0.65 ],
 "yline": true,
 "yticks": false 
 },
@@ -1297,8 +1409,8 @@
 "height":      400 
 },
 "geoms": [
- "geom5_tile_coefvec",
-"geom6_text_coefvec" 
+ "geom6_tile_coefvec",
+"geom7_text_coefvec" 
 ] 
 },
 "varscatter": {
@@ -1404,7 +1516,7 @@
 "500",
 "750" 
 ],
-"xrange": [ -47.26168, 980.1754 ],
+"xrange": [ -47.30535,  980.219 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1419,7 +1531,7 @@
 "500",
 "750" 
 ],
-"yrange": [ -47.26168, 980.1754 ],
+"yrange": [ -47.30532, 980.2186 ],
 "yline": true,
 "yticks": true 
 },
@@ -23562,9 +23674,9 @@
 } 
 },
 "geoms": [
- "geom7_point_varscatter",
-"geom8_text_varscatter",
-"geom9_text_varscatter" 
+ "geom8_point_varscatter",
+"geom9_text_varscatter",
+"geom10_text_varscatter" 
 ] 
 } 
 },

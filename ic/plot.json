@@ -49,6 +49,7 @@
 "yend": "corr.var",
 "xend": "Inf",
 "colour": "corr.coef",
+"tooltip": "corr.coef",
 "showSelected1": "var" 
 },
 "params": {
@@ -64,6 +65,7 @@
 "xend": "numeric",
 "y": "integer",
 "yend": "integer",
+"tooltip": "numeric",
 "showSelected1": "factor",
 "PANEL": "factor",
 "group": "character" 
@@ -80,36 +82,9 @@
 "chunks": 1,
 "total": 1 
 },
-"geom3_point_varcoef": {
- "geom": "point",
-"classed": "geom3_point_varcoef",
-"aes": {
- "x": "norm.coef",
-"y": "var" 
-},
-"params": {
- "na.rm": false,
-"na.rm": false 
-},
-"types": {
- "x": "numeric",
-"y": "integer",
-"PANEL": "factor",
-"group": "character" 
-},
-"chunk_order": [],
-"nest_order": [
- "PANEL" 
-],
-"subset_order": [
- "PANEL" 
-],
-"chunks": 1,
-"total": 1 
-},
-"geom4_segment_varcoef": {
+"geom3_segment_varcoef": {
  "geom": "segment",
-"classed": "geom4_segment_varcoef",
+"classed": "geom3_segment_varcoef",
 "aes": {
  "x": "-Inf",
 "y": "var",
@@ -145,14 +120,76 @@
 "chunks": 1,
 "total": 1 
 },
-"geom5_tile_coefvec": {
+"geom4_point_varcoef": {
+ "geom": "point",
+"classed": "geom4_point_varcoef",
+"aes": {
+ "x": "norm.coef",
+"y": "var",
+"tooltip": "norm.coef" 
+},
+"params": {
+ "na.rm": false,
+"na.rm": false 
+},
+"types": {
+ "x": "numeric",
+"y": "integer",
+"tooltip": "numeric",
+"PANEL": "factor",
+"group": "character" 
+},
+"chunk_order": [],
+"nest_order": [
+ "PANEL" 
+],
+"subset_order": [
+ "PANEL" 
+],
+"chunks": 1,
+"total": 1 
+},
+"geom5_point_varcoef": {
+ "geom": "point",
+"classed": "geom5_point_varcoef",
+"aes": {
+ "x": "mean",
+"y": "var",
+"tooltip": "paste0(\"mean = \", mean)" 
+},
+"params": {
+ "na.rm": false,
+"na.rm": false,
+"colour": "#0000FF",
+"size":        5,
+"alpha":      0.5 
+},
+"types": {
+ "x": "numeric",
+"y": "integer",
+"tooltip": "character",
+"PANEL": "factor",
+"group": "character" 
+},
+"chunk_order": [],
+"nest_order": [
+ "PANEL" 
+],
+"subset_order": [
+ "PANEL" 
+],
+"chunks": 1,
+"total": 1 
+},
+"geom6_tile_coefvec": {
  "geom": "rect",
-"classed": "geom5_tile_coefvec",
+"classed": "geom6_tile_coefvec",
 "aes": {
  "x": "1",
-"y": "var.order",
+"y": "-var.order",
 "fill": "corr.coef",
 "key": "corr.var",
+"tooltip": "corr.coef",
 "clickSelects": "corr.var",
 "showSelected1": "var" 
 },
@@ -167,6 +204,7 @@
 "x": "numeric",
 "y": "numeric",
 "key": "character",
+"tooltip": "numeric",
 "clickSelects": "character",
 "showSelected1": "factor",
 "PANEL": "integer",
@@ -188,13 +226,14 @@
 "chunks": 1,
 "total": 1 
 },
-"geom6_text_coefvec": {
+"geom7_text_coefvec": {
  "geom": "text",
-"classed": "geom6_text_coefvec",
+"classed": "geom7_text_coefvec",
 "aes": {
  "x": "2",
-"y": "var.order - 0.3",
+"y": "-(var.order + 0.3)",
 "label": "corr.var",
+"tooltip": "corr.coef",
 "clickSelects": "corr.var",
 "showSelected1": "var" 
 },
@@ -212,6 +251,7 @@
  "x": "numeric",
 "y": "numeric",
 "label": "character",
+"tooltip": "numeric",
 "clickSelects": "character",
 "showSelected1": "factor",
 "PANEL": "integer",
@@ -227,24 +267,30 @@
 "chunks": 1,
 "total": 1 
 },
-"geom7_point_varscatter": {
+"geom8_point_varscatter": {
  "geom": "point",
-"classed": "geom7_point_varscatter",
+"classed": "geom8_point_varscatter",
 "aes": {
  "x": "var.val",
 "y": "corr.var.val",
+"tooltip": "paste(State.District.ID, year)",
+"clickSelects": "State.District.ID",
 "showSelected1": "var",
 "showSelected2": "corr.var" 
 },
 "params": {
  "na.rm": false,
 "na.rm": false,
+"alpha":      0.6,
+"clickSelects": "State.District.ID",
 "showSelected": [ "var", "corr.var" ],
 "chunk_vars": "var" 
 },
 "types": {
  "x": "numeric",
 "y": "numeric",
+"tooltip": "character",
+"clickSelects": "character",
 "showSelected1": "factor",
 "showSelected2": "factor",
 "PANEL": "integer",
@@ -261,7 +307,8 @@
 ],
 "columns": {
  "common": [
- "y",
+ "tooltip",
+"clickSelects",
 "showSelected2",
 "group" 
 ] 
@@ -278,20 +325,21 @@
 "Develop.protocol.for.maintaining.ongoing.commun...": 9,
 "Develop.timelines.and.expectations.aligning.imp...": 10,
 "Establish.district..and.building.level.goal.s.....": 11,
-"Form.district.leadership.team..DLT....see.Bluep...": 12,
-"Identify.a.process.for.monitoring.progress.of.t...": 13,
-"Participate.in.regional..cadre..and.state.event...": 14,
-"Revisit.and.revise.PD.plans.based.on.data.": 15,
-"Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": 16,
-"Teacher_leader_growth_mindset_In_Place": 17,
-"Total_amount_in_place": 18,
-"Use.technology.to.increase.the.quality.and.time...": 19 
+"ETLP_avg": 12,
+"Form.district.leadership.team..DLT....see.Bluep...": 13,
+"Identify.a.process.for.monitoring.progress.of.t...": 14,
+"Participate.in.regional..cadre..and.state.event...": 15,
+"Revisit.and.revise.PD.plans.based.on.data.": 16,
+"Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": 17,
+"Teacher_leader_growth_mindset_In_Place": 18,
+"Total_amount_in_place": 19,
+"Use.technology.to.increase.the.quality.and.time...": 20 
 },
-"total": 19 
+"total": 20 
 },
-"geom8_text_varscatter": {
+"geom9_text_varscatter": {
  "geom": "text",
-"classed": "geom8_text_varscatter",
+"classed": "geom9_text_varscatter",
 "aes": {
  "x": "var.x",
 "y": "var.y",
@@ -328,9 +376,9 @@
 "chunks": 1,
 "total": 1 
 },
-"geom9_text_varscatter": {
+"geom10_text_varscatter": {
  "geom": "text",
-"classed": "geom9_text_varscatter",
+"classed": "geom10_text_varscatter",
 "aes": {
  "x": "corr.x",
 "y": "corr.y",
@@ -381,14 +429,14 @@
 "showSelected": true,
 "clickSelects": true,
 "selected": "Administer.Self.Assessment.Practice.Profile.at....",
-"levels": [ "Administer.Self.Assessment.Practice.Profile.at....", "Designate.building.level.contact.person..for.ea...", "Develop.a.district.wide.plan.for.consistent.and...", "Develop.and.implement.protocol.for.conducting.w...", "Develop.protocol.for.maintaining.ongoing.commun...", "Develop.timelines.and.expectations.aligning.imp...", "Establish.district..and.building.level.goal.s.....", "Form.district.leadership.team..DLT....see.Bluep...", "Identify.a.process.for.monitoring.progress.of.t...", "Revisit.and.revise.PD.plans.based.on.data.", "Support.the.use.of.data..e.g..SAPP..CWIS..to.in...", "Teacher_leader_growth_mindset_In_Place", "Total_amount_in_place", "Participate.in.regional..cadre..and.state.event...", "Use.technology.to.increase.the.quality.and.time...", "Align.implementation.goals.with.CSIP..Comprehen...", "Administer.implementation.survey..e.g..Collabor...", "Annually..summarize.district.wide.fidelity.and....", "Designate.district.level.contact.person." ],
+"levels": [ "Administer.Self.Assessment.Practice.Profile.at....", "Designate.building.level.contact.person..for.ea...", "Develop.a.district.wide.plan.for.consistent.and...", "Develop.and.implement.protocol.for.conducting.w...", "Develop.protocol.for.maintaining.ongoing.commun...", "Develop.timelines.and.expectations.aligning.imp...", "Establish.district..and.building.level.goal.s.....", "Form.district.leadership.team..DLT....see.Bluep...", "Identify.a.process.for.monitoring.progress.of.t...", "Revisit.and.revise.PD.plans.based.on.data.", "Support.the.use.of.data..e.g..SAPP..CWIS..to.in...", "Teacher_leader_growth_mindset_In_Place", "Total_amount_in_place", "Participate.in.regional..cadre..and.state.event...", "Use.technology.to.increase.the.quality.and.time...", "Align.implementation.goals.with.CSIP..Comprehen...", "Administer.implementation.survey..e.g..Collabor...", "Annually..summarize.district.wide.fidelity.and....", "Designate.district.level.contact.person.", "ETLP_avg" ],
 "update": [
  "geom1_segment_varcoef",
-"geom5_tile_coefvec",
-"geom6_text_coefvec",
-"geom7_point_varscatter",
-"geom8_text_varscatter",
-"geom9_text_varscatter" 
+"geom6_tile_coefvec",
+"geom7_text_coefvec",
+"geom8_point_varscatter",
+"geom9_text_varscatter",
+"geom10_text_varscatter" 
 ],
 "duration":     1000 
 },
@@ -399,17 +447,27 @@
 "clickSelects": true,
 "chunks": "var",
 "selected": "Form.district.leadership.team..DLT....see.Bluep...",
-"levels": [ "Form.district.leadership.team..DLT....see.Bluep...", "Designate.district.level.contact.person.", "Designate.building.level.contact.person..for.ea...", "Develop.protocol.for.maintaining.ongoing.commun...", "Develop.a.district.wide.plan.for.consistent.and...", "Identify.a.process.for.monitoring.progress.of.t...", "Administer.Self.Assessment.Practice.Profile.at....", "Administer.implementation.survey..e.g..Collabor...", "Use.technology.to.increase.the.quality.and.time...", "Participate.in.regional..cadre..and.state.event...", "Support.the.use.of.data..e.g..SAPP..CWIS..to.in...", "Develop.and.implement.protocol.for.conducting.w...", "Annually..summarize.district.wide.fidelity.and....", "Establish.district..and.building.level.goal.s.....", "Revisit.and.revise.PD.plans.based.on.data.", "Develop.timelines.and.expectations.aligning.imp...", "Align.implementation.goals.with.CSIP..Comprehen...", "Teacher_leader_growth_mindset_In_Place", "Total_amount_in_place" ],
+"levels": [ "Form.district.leadership.team..DLT....see.Bluep...", "Designate.district.level.contact.person.", "Designate.building.level.contact.person..for.ea...", "Develop.protocol.for.maintaining.ongoing.commun...", "Develop.a.district.wide.plan.for.consistent.and...", "Identify.a.process.for.monitoring.progress.of.t...", "Administer.Self.Assessment.Practice.Profile.at....", "Administer.implementation.survey..e.g..Collabor...", "Use.technology.to.increase.the.quality.and.time...", "Participate.in.regional..cadre..and.state.event...", "Support.the.use.of.data..e.g..SAPP..CWIS..to.in...", "Develop.and.implement.protocol.for.conducting.w...", "Annually..summarize.district.wide.fidelity.and....", "Establish.district..and.building.level.goal.s.....", "Revisit.and.revise.PD.plans.based.on.data.", "Develop.timelines.and.expectations.aligning.imp...", "Align.implementation.goals.with.CSIP..Comprehen...", "Teacher_leader_growth_mindset_In_Place", "Total_amount_in_place", "ETLP_avg" ],
 "update": [
  "geom2_segment_varcoef",
-"geom4_segment_varcoef",
-"geom5_tile_coefvec",
-"geom6_text_coefvec",
-"geom7_point_varscatter",
-"geom8_text_varscatter",
-"geom9_text_varscatter" 
+"geom3_segment_varcoef",
+"geom6_tile_coefvec",
+"geom7_text_coefvec",
+"geom8_point_varscatter",
+"geom9_text_varscatter",
+"geom10_text_varscatter" 
 ],
 "duration":     1000 
+},
+"State.District.ID": {
+ "is.variable.value": false,
+"type": "single",
+"clickSelects": true,
+"selected": "MO-001090",
+"levels": [ "MO-001090", "MO-002097", "MO-003031", "MO-003032", "MO-004106", "MO-004110", "MO-005121", "MO-005123", "MO-008107", "MO-009080", "MO-010089", "MO-011079", "MO-012108", "MO-012109", "MO-014126", "MO-014127", "MO-014129", "MO-014130", "MO-015002", "MO-015004", "MO-016096", "MO-017125", "MO-017126", "MO-018047", "MO-018050", "MO-019142", "MO-019144", "MO-019152", "MO-021149", "MO-022090", "MO-022094", "MO-023101", "MO-024087", "MO-024089", "MO-026001", "MO-027057", "MO-028101", "MO-028102", "MO-028103", "MO-029004", "MO-033090", "MO-033092", "MO-033094", "MO-034124", "MO-035092", "MO-035099", "MO-035102", "MO-036126", "MO-036131", "MO-036133", "MO-036135", "MO-036137", "MO-037037", "MO-039136", "MO-040107", "MO-041002", "MO-041005", "MO-042113", "MO-042117", "MO-042118", "MO-042124", "MO-044083", "MO-045077", "MO-046131", "MO-046137", "MO-047065", "MO-048066", "MO-048072", "MO-048074", "MO-048902", "MO-049142", "MO-050001", "MO-050002", "MO-050006", "MO-050007", "MO-051152", "MO-051159", "MO-054041", "MO-054043", "MO-055105", "MO-055110", "MO-056017", "MO-057004", "MO-058106", "MO-058107", "MO-058108", "MO-058112", "MO-059117", "MO-060077", "MO-062070", "MO-062072", "MO-063066", "MO-063067", "MO-064074", "MO-064075", "MO-067061", "MO-069107", "MO-069108", "MO-072066", "MO-072074", "MO-073102", "MO-073108", "MO-074190", "MO-074197", "MO-074201", "MO-075086", "MO-076081", "MO-076082", "MO-077104", "MO-078002", "MO-078003", "MO-078009", "MO-078012", "MO-079077", "MO-080122", "MO-080125", "MO-081094", "MO-081097", "MO-082100", "MO-082101", "MO-082108", "MO-084004", "MO-085044", "MO-085045", "MO-085046", "MO-085048", "MO-085049", "MO-087083", "MO-088072", "MO-088073", "MO-088075", "MO-090076", "MO-092087", "MO-092089", "MO-092090", "MO-092091", "MO-093120", "MO-094076", "MO-094078", "MO-094083", "MO-094086", "MO-096088", "MO-096099", "MO-096107", "MO-096109", "MO-096114", "MO-097119", "MO-097129", "MO-099082", "MO-100059", "MO-100062", "MO-100063", "MO-105124", "MO-105125", "MO-107152", "MO-107156", "MO-107158", "MO-108144", "MO-109002", "MO-110014", "MO-110029", "MO-110030", "MO-112099", "MO-113001", "MO-114114", "MO-115902", "MO-115906", "MO-115928" ],
+"update": [
+ "geom8_point_varscatter" 
+] 
 } 
 },
 "plots": {
@@ -463,10 +521,12 @@
  "0",
 "1",
 "9",
-"10" 
+"10",
+"NA" 
 ],
 "top": [
  "",
+"",
 "",
 "",
 "" 
@@ -477,17 +537,17 @@
 } 
 },
 "layout": {
- "PANEL": [ "1", "2", "3", "4" ],
-"ROW": [ 1, 2, 3, 4 ],
-"COL": [ 1, 1, 1, 1 ],
-"count": [ 0, 1, 9, 10 ],
-"SCALE_X": [ 1, 1, 1, 1 ],
-"SCALE_Y": [ 1, 2, 3, 4 ],
-"AXIS_Y": [ true, true, true, true ],
-"AXIS_X": [ false, false, false, true ],
-"coord_fixed": [ false, false, false, false ],
-"width_proportion": [        1,        1,        1,        1 ],
-"height_proportion": [ 0.6666667, 0.1111111, 0.06060606, 0.1616162 ] 
+ "PANEL": [ "1", "2", "3", "4", "5" ],
+"ROW": [ 1, 2, 3, 4, 5 ],
+"COL": [ 1, 1, 1, 1, 1 ],
+"count": [ 0, 1, 9, 10, null ],
+"SCALE_X": [ 1, 1, 1, 1, 1 ],
+"SCALE_Y": [ 1, 2, 3, 4, 5 ],
+"AXIS_Y": [ true, true, true, true, true ],
+"AXIS_X": [ false, false, false, false, true ],
+"coord_fixed": [ false, false, false, false, false ],
+"width_proportion": [        1,        1,        1,        1,        1 ],
+"height_proportion": [ 0.6285714, 0.1047619, 0.05714286, 0.152381, 0.05714286 ] 
 },
 "panel_background": {
  "fill": "#EBEBEB",
@@ -504,6 +564,11 @@
 "loc": {
  "x": [
  [
+    -0.02,
+       0,
+    0.02 
+],
+[
     -0.02,
        0,
     0.02 
@@ -551,6 +616,9 @@
  1,
 2,
 3 
+],
+[
+ 1 
 ] 
 ] 
 } 
@@ -593,10 +661,19 @@
     0.01,
     0.02,
     0.03 
+],
+[
+    -0.02,
+   -0.01,
+       0,
+    0.01,
+    0.02,
+    0.03 
 ] 
 ],
 "y": [
  [],
+[],
 [],
 [],
 [] 
@@ -729,6 +806,30 @@
 "yline": true,
 "yticks": true 
 },
+"axis5": {
+ "x": [
+    -0.02,
+       0,
+    0.02 
+],
+"xlab": [
+ "-0.02",
+"0.00",
+"0.02" 
+],
+"xrange": [ -0.02187243, 0.03610483 ],
+"xline": true,
+"xticks": true,
+"y": [
+ 1 
+],
+"ylab": [
+ "ETLP_avg" 
+],
+"yrange": [      0.4,      1.6 ],
+"yline": true,
+"yticks": true 
+},
 "xtitle": "Normalized linear model coefficient",
 "xanchor": "middle",
 "xangle":        0,
@@ -759,7 +860,8 @@
 "Align.implementation.goals.with.CSIP..Comprehen...",
 "Administer.implementation.survey..e.g..Collabor...",
 "Annually..summarize.district.wide.fidelity.and....",
-"Designate.district.level.contact.person." 
+"Designate.district.level.contact.person.",
+"ETLP_avg" 
 ],
 "options": {
  "width":      800,
@@ -768,8 +870,9 @@
 "geoms": [
  "geom1_segment_varcoef",
 "geom2_segment_varcoef",
-"geom3_point_varcoef",
-"geom4_segment_varcoef" 
+"geom3_segment_varcoef",
+"geom4_point_varcoef",
+"geom5_point_varcoef" 
 ] 
 },
 "coefvec": {
@@ -796,7 +899,7 @@
 "AXIS_Y": [ true ],
 "coord_fixed": [ true ],
 "width_proportion": [        1 ],
-"height_proportion": [     0.95 ] 
+"height_proportion": [        1 ] 
 },
 "panel_background": {
  "fill": "#EBEBEB",
@@ -822,11 +925,11 @@
 ],
 "y": [
  [
-        0,
-       5,
-      10,
-      15,
-      20 
+      -20,
+     -15,
+     -10,
+      -5,
+       0 
 ] 
 ] 
 } 
@@ -852,15 +955,15 @@
 ],
 "y": [
  [
-        0,
-     2.5,
-       5,
-     7.5,
-      10,
-    12.5,
-      15,
-    17.5,
-      20 
+      -20,
+   -17.5,
+     -15,
+   -12.5,
+     -10,
+    -7.5,
+      -5,
+    -2.5,
+       0 
 ] 
 ] 
 } 
@@ -877,13 +980,13 @@
 "xline": true,
 "xticks": false,
 "y": [
-        0,
-       5,
-      10,
-      15,
-      20 
+      -20,
+     -15,
+     -10,
+      -5,
+       0 
 ],
-"yrange": [    -0.45,    20.45 ],
+"yrange": [    -21.5,      0.5 ],
 "yline": true,
 "yticks": false 
 },
@@ -901,8 +1004,8 @@
 "height":      400 
 },
 "geoms": [
- "geom5_tile_coefvec",
-"geom6_text_coefvec" 
+ "geom6_tile_coefvec",
+"geom7_text_coefvec" 
 ] 
 },
 "varscatter": {
@@ -1008,7 +1111,7 @@
 "10",
 "15" 
 ],
-"xrange": [    -0.85,    17.85 ],
+"xrange": [ -0.8939361, 17.89272 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1023,7 +1126,7 @@
 "10",
 "15" 
 ],
-"yrange": [    -0.85,    17.85 ],
+"yrange": [ -0.8938683, 17.89233 ],
 "yline": true,
 "yticks": true 
 },
@@ -1074,6 +1177,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Form.district.leadership.team..DLT....see.Bluep...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Form.district.leadership.team..DLT....see.Bluep...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Form.district.leadership.team..DLT....see.Bluep...": [     0.85,     4.15 ],
+"1.ETLP_avg_Form.district.leadership.team..DLT....see.Bluep...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Designate.district.level.contact.person.": [     0.85,     4.15 ],
@@ -1093,6 +1197,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Designate.district.level.contact.person.": [     0.85,     4.15 ],
+"1.ETLP_avg_Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
@@ -1112,6 +1217,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
+"1.ETLP_avg_Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
@@ -1131,6 +1237,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
+"1.ETLP_avg_Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
@@ -1150,6 +1257,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
+"1.ETLP_avg_Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
@@ -1169,6 +1277,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
+"1.ETLP_avg_Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
@@ -1188,6 +1297,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
+"1.ETLP_avg_Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
@@ -1207,6 +1317,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
+"1.ETLP_avg_Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
@@ -1226,6 +1337,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
+"1.ETLP_avg_Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
@@ -1245,6 +1357,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
+"1.ETLP_avg_Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
@@ -1264,6 +1377,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
+"1.ETLP_avg_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
@@ -1283,6 +1397,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
+"1.ETLP_avg_Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
@@ -1302,6 +1417,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
+"1.ETLP_avg_Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
@@ -1321,6 +1437,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
+"1.ETLP_avg_Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
@@ -1340,6 +1457,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
+"1.ETLP_avg_Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
@@ -1359,6 +1477,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
+"1.ETLP_avg_Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
@@ -1378,6 +1497,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Total_amount_in_place_Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
+"1.ETLP_avg_Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
 "1.Designate.district.level.contact.person._Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
 "1.Designate.building.level.contact.person..for.ea..._Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
@@ -1397,6 +1517,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
 "1.Teacher_leader_growth_mindset_In_Place_Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
+"1.ETLP_avg_Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Total_amount_in_place": [    -0.85,    17.85 ],
 "1.Designate.district.level.contact.person._Total_amount_in_place": [    -0.85,    17.85 ],
 "1.Designate.building.level.contact.person..for.ea..._Total_amount_in_place": [    -0.85,    17.85 ],
@@ -1415,7 +1536,28 @@
 "1.Develop.timelines.and.expectations.aligning.imp..._Total_amount_in_place": [    -0.85,    17.85 ],
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Total_amount_in_place": [    -0.85,    17.85 ],
 "1.Teacher_leader_growth_mindset_In_Place_Total_amount_in_place": [    -0.85,    17.85 ],
-"1.Total_amount_in_place_Total_amount_in_place": [    -0.85,    17.85 ] 
+"1.Total_amount_in_place_Total_amount_in_place": [    -0.85,    17.85 ],
+"1.ETLP_avg_Total_amount_in_place": [    -0.85,    17.85 ],
+"1.Form.district.leadership.team..DLT....see.Bluep..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Designate.district.level.contact.person._ETLP_avg": [      2.3, 5.128571 ],
+"1.Designate.building.level.contact.person..for.ea..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Develop.protocol.for.maintaining.ongoing.commun..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Develop.a.district.wide.plan.for.consistent.and..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Identify.a.process.for.monitoring.progress.of.t..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Administer.Self.Assessment.Practice.Profile.at...._ETLP_avg": [      2.3, 5.128571 ],
+"1.Administer.implementation.survey..e.g..Collabor..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Use.technology.to.increase.the.quality.and.time..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Participate.in.regional..cadre..and.state.event..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Support.the.use.of.data..e.g..SAPP..CWIS..to.in..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Develop.and.implement.protocol.for.conducting.w..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Annually..summarize.district.wide.fidelity.and...._ETLP_avg": [      2.3, 5.128571 ],
+"1.Establish.district..and.building.level.goal.s....._ETLP_avg": [      2.3, 5.128571 ],
+"1.Revisit.and.revise.PD.plans.based.on.data._ETLP_avg": [      2.3, 5.128571 ],
+"1.Develop.timelines.and.expectations.aligning.imp..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Align.implementation.goals.with.CSIP..Comprehen..._ETLP_avg": [      2.3, 5.128571 ],
+"1.Teacher_leader_growth_mindset_In_Place_ETLP_avg": [      2.3, 5.128571 ],
+"1.Total_amount_in_place_ETLP_avg": [      2.3, 5.128571 ],
+"1.ETLP_avg_ETLP_avg": [      2.3, 5.128571 ] 
 },
 "grids": {
  "1.Form.district.leadership.team..DLT....see.Bluep..._Form.district.leadership.team..DLT....see.Bluep...": [
@@ -1491,6 +1633,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Form.district.leadership.team..DLT....see.Bluep...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Form.district.leadership.team..DLT....see.Bluep...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -1570,6 +1716,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Designate.district.level.contact.person.": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Designate.building.level.contact.person..for.ea...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -1643,6 +1793,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Designate.building.level.contact.person..for.ea...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Designate.building.level.contact.person..for.ea...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -1722,6 +1876,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Develop.protocol.for.maintaining.ongoing.commun...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.a.district.wide.plan.for.consistent.and...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -1795,6 +1953,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Develop.a.district.wide.plan.for.consistent.and...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Develop.a.district.wide.plan.for.consistent.and...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -1874,6 +2036,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Identify.a.process.for.monitoring.progress.of.t...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Administer.Self.Assessment.Practice.Profile.at....": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -1947,6 +2113,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Administer.Self.Assessment.Practice.Profile.at....": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Administer.Self.Assessment.Practice.Profile.at....": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -2026,6 +2196,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Administer.implementation.survey..e.g..Collabor...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Use.technology.to.increase.the.quality.and.time...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -2099,6 +2273,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Use.technology.to.increase.the.quality.and.time...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Use.technology.to.increase.the.quality.and.time...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -2178,6 +2356,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Participate.in.regional..cadre..and.state.event...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -2251,6 +2433,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -2330,6 +2516,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Develop.and.implement.protocol.for.conducting.w...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Annually..summarize.district.wide.fidelity.and....": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -2403,6 +2593,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Annually..summarize.district.wide.fidelity.and....": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Annually..summarize.district.wide.fidelity.and....": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -2482,6 +2676,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Establish.district..and.building.level.goal.s.....": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Revisit.and.revise.PD.plans.based.on.data.": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -2555,6 +2753,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Revisit.and.revise.PD.plans.based.on.data.": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Revisit.and.revise.PD.plans.based.on.data.": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -2634,6 +2836,10 @@
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
+"1.ETLP_avg_Develop.timelines.and.expectations.aligning.imp...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Align.implementation.goals.with.CSIP..Comprehen...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -2707,6 +2913,10 @@
 [      1.5,      2.5,      3.5 ] 
 ],
 "1.Total_amount_in_place_Align.implementation.goals.with.CSIP..Comprehen...": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.ETLP_avg_Align.implementation.goals.with.CSIP..Comprehen...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
 ],
@@ -2786,6 +2996,10 @@
  [        0,        2,        4,        6,        8,       10 ],
 [        1,        3,        5,        7,        9 ] 
 ],
+"1.ETLP_avg_Teacher_leader_growth_mindset_In_Place": [
+ [        0,        2,        4,        6,        8,       10 ],
+[        1,        3,        5,        7,        9 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Total_amount_in_place": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
@@ -2861,6 +3075,90 @@
 "1.Total_amount_in_place_Total_amount_in_place": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Total_amount_in_place": [
+ [        0,        4,        8,       12,       16 ],
+[        2,        6,       10,       14 ] 
+],
+"1.Form.district.leadership.team..DLT....see.Bluep..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Designate.district.level.contact.person._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Designate.building.level.contact.person..for.ea..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Develop.protocol.for.maintaining.ongoing.commun..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Develop.a.district.wide.plan.for.consistent.and..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Identify.a.process.for.monitoring.progress.of.t..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Administer.Self.Assessment.Practice.Profile.at...._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Administer.implementation.survey..e.g..Collabor..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Use.technology.to.increase.the.quality.and.time..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Participate.in.regional..cadre..and.state.event..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Support.the.use.of.data..e.g..SAPP..CWIS..to.in..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Develop.and.implement.protocol.for.conducting.w..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Annually..summarize.district.wide.fidelity.and...._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Establish.district..and.building.level.goal.s....._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Revisit.and.revise.PD.plans.based.on.data._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Develop.timelines.and.expectations.aligning.imp..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Align.implementation.goals.with.CSIP..Comprehen..._ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Teacher_leader_growth_mindset_In_Place_ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Total_amount_in_place_ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.ETLP_avg_ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ] 
 },
 "curr_select": {
@@ -2890,6 +3188,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Form.district.leadership.team..DLT....see.Bluep...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Form.district.leadership.team..DLT....see.Bluep...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Form.district.leadership.team..DLT....see.Bluep...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Form.district.leadership.team..DLT....see.Bluep...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Designate.district.level.contact.person.": [     0.85,     4.15 ],
@@ -2909,6 +3208,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Designate.district.level.contact.person.": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Designate.district.level.contact.person.": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Designate.district.level.contact.person.": [    -0.85,    17.85 ],
+"1.ETLP_avg_Designate.district.level.contact.person.": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
@@ -2928,6 +3228,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Designate.building.level.contact.person..for.ea...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Designate.building.level.contact.person..for.ea...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Designate.building.level.contact.person..for.ea...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Designate.building.level.contact.person..for.ea...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
@@ -2947,6 +3248,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.protocol.for.maintaining.ongoing.commun...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.protocol.for.maintaining.ongoing.commun...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Develop.protocol.for.maintaining.ongoing.commun...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Develop.protocol.for.maintaining.ongoing.commun...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
@@ -2966,6 +3268,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.a.district.wide.plan.for.consistent.and...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.a.district.wide.plan.for.consistent.and...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Develop.a.district.wide.plan.for.consistent.and...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Develop.a.district.wide.plan.for.consistent.and...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
@@ -2985,6 +3288,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Identify.a.process.for.monitoring.progress.of.t...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Identify.a.process.for.monitoring.progress.of.t...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Identify.a.process.for.monitoring.progress.of.t...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Identify.a.process.for.monitoring.progress.of.t...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
@@ -3004,6 +3308,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Administer.Self.Assessment.Practice.Profile.at....": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Administer.Self.Assessment.Practice.Profile.at....": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Administer.Self.Assessment.Practice.Profile.at....": [    -0.85,    17.85 ],
+"1.ETLP_avg_Administer.Self.Assessment.Practice.Profile.at....": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
@@ -3023,6 +3328,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Administer.implementation.survey..e.g..Collabor...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Administer.implementation.survey..e.g..Collabor...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Administer.implementation.survey..e.g..Collabor...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Administer.implementation.survey..e.g..Collabor...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
@@ -3042,6 +3348,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Use.technology.to.increase.the.quality.and.time...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Use.technology.to.increase.the.quality.and.time...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Use.technology.to.increase.the.quality.and.time...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Use.technology.to.increase.the.quality.and.time...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
@@ -3061,6 +3368,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Participate.in.regional..cadre..and.state.event...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Participate.in.regional..cadre..and.state.event...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Participate.in.regional..cadre..and.state.event...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Participate.in.regional..cadre..and.state.event...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
@@ -3080,6 +3388,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
@@ -3099,6 +3408,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.and.implement.protocol.for.conducting.w...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.and.implement.protocol.for.conducting.w...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Develop.and.implement.protocol.for.conducting.w...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Develop.and.implement.protocol.for.conducting.w...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
@@ -3118,6 +3428,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Annually..summarize.district.wide.fidelity.and....": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Annually..summarize.district.wide.fidelity.and....": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Annually..summarize.district.wide.fidelity.and....": [    -0.85,    17.85 ],
+"1.ETLP_avg_Annually..summarize.district.wide.fidelity.and....": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
@@ -3137,6 +3448,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Establish.district..and.building.level.goal.s.....": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Establish.district..and.building.level.goal.s.....": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Establish.district..and.building.level.goal.s.....": [    -0.85,    17.85 ],
+"1.ETLP_avg_Establish.district..and.building.level.goal.s.....": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
@@ -3156,6 +3468,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Revisit.and.revise.PD.plans.based.on.data.": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Revisit.and.revise.PD.plans.based.on.data.": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Revisit.and.revise.PD.plans.based.on.data.": [    -0.85,    17.85 ],
+"1.ETLP_avg_Revisit.and.revise.PD.plans.based.on.data.": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
@@ -3175,6 +3488,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Develop.timelines.and.expectations.aligning.imp...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Develop.timelines.and.expectations.aligning.imp...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Develop.timelines.and.expectations.aligning.imp...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Develop.timelines.and.expectations.aligning.imp...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
@@ -3194,6 +3508,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Align.implementation.goals.with.CSIP..Comprehen...": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Align.implementation.goals.with.CSIP..Comprehen...": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Align.implementation.goals.with.CSIP..Comprehen...": [    -0.85,    17.85 ],
+"1.ETLP_avg_Align.implementation.goals.with.CSIP..Comprehen...": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Teacher_leader_growth_mindset_In_Place": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Teacher_leader_growth_mindset_In_Place": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Teacher_leader_growth_mindset_In_Place": [     0.85,     4.15 ],
@@ -3213,6 +3528,7 @@
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Teacher_leader_growth_mindset_In_Place": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Teacher_leader_growth_mindset_In_Place": [     -0.5,     10.5 ],
 "1.Total_amount_in_place_Teacher_leader_growth_mindset_In_Place": [    -0.85,    17.85 ],
+"1.ETLP_avg_Teacher_leader_growth_mindset_In_Place": [      2.3, 5.128571 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Total_amount_in_place": [     0.85,     4.15 ],
 "1.Designate.district.level.contact.person._Total_amount_in_place": [     0.85,     4.15 ],
 "1.Designate.building.level.contact.person..for.ea..._Total_amount_in_place": [     0.85,     4.15 ],
@@ -3231,7 +3547,28 @@
 "1.Develop.timelines.and.expectations.aligning.imp..._Total_amount_in_place": [     0.85,     4.15 ],
 "1.Align.implementation.goals.with.CSIP..Comprehen..._Total_amount_in_place": [     0.85,     4.15 ],
 "1.Teacher_leader_growth_mindset_In_Place_Total_amount_in_place": [     -0.5,     10.5 ],
-"1.Total_amount_in_place_Total_amount_in_place": [    -0.85,    17.85 ] 
+"1.Total_amount_in_place_Total_amount_in_place": [    -0.85,    17.85 ],
+"1.ETLP_avg_Total_amount_in_place": [      2.3, 5.128571 ],
+"1.Form.district.leadership.team..DLT....see.Bluep..._ETLP_avg": [     0.85,     4.15 ],
+"1.Designate.district.level.contact.person._ETLP_avg": [     0.85,     4.15 ],
+"1.Designate.building.level.contact.person..for.ea..._ETLP_avg": [     0.85,     4.15 ],
+"1.Develop.protocol.for.maintaining.ongoing.commun..._ETLP_avg": [     0.85,     4.15 ],
+"1.Develop.a.district.wide.plan.for.consistent.and..._ETLP_avg": [     0.85,     4.15 ],
+"1.Identify.a.process.for.monitoring.progress.of.t..._ETLP_avg": [     0.85,     4.15 ],
+"1.Administer.Self.Assessment.Practice.Profile.at...._ETLP_avg": [     0.85,     4.15 ],
+"1.Administer.implementation.survey..e.g..Collabor..._ETLP_avg": [     0.85,     4.15 ],
+"1.Use.technology.to.increase.the.quality.and.time..._ETLP_avg": [     0.85,     4.15 ],
+"1.Participate.in.regional..cadre..and.state.event..._ETLP_avg": [     0.85,     4.15 ],
+"1.Support.the.use.of.data..e.g..SAPP..CWIS..to.in..._ETLP_avg": [     0.85,     4.15 ],
+"1.Develop.and.implement.protocol.for.conducting.w..._ETLP_avg": [     0.85,     4.15 ],
+"1.Annually..summarize.district.wide.fidelity.and...._ETLP_avg": [     0.85,     4.15 ],
+"1.Establish.district..and.building.level.goal.s....._ETLP_avg": [     0.85,     4.15 ],
+"1.Revisit.and.revise.PD.plans.based.on.data._ETLP_avg": [     0.85,     4.15 ],
+"1.Develop.timelines.and.expectations.aligning.imp..._ETLP_avg": [     0.85,     4.15 ],
+"1.Align.implementation.goals.with.CSIP..Comprehen..._ETLP_avg": [     0.85,     4.15 ],
+"1.Teacher_leader_growth_mindset_In_Place_ETLP_avg": [     -0.5,     10.5 ],
+"1.Total_amount_in_place_ETLP_avg": [    -0.85,    17.85 ],
+"1.ETLP_avg_ETLP_avg": [      2.3, 5.128571 ] 
 },
 "grids": {
  "1.Form.district.leadership.team..DLT....see.Bluep..._Form.district.leadership.team..DLT....see.Bluep...": [
@@ -3310,6 +3647,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Form.district.leadership.team..DLT....see.Bluep...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Designate.district.level.contact.person.": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -3385,6 +3726,10 @@
 "1.Total_amount_in_place_Designate.district.level.contact.person.": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Designate.district.level.contact.person.": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Designate.building.level.contact.person..for.ea...": [
  [        1,        2,        3,        4 ],
@@ -3462,6 +3807,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Designate.building.level.contact.person..for.ea...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.protocol.for.maintaining.ongoing.commun...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -3537,6 +3886,10 @@
 "1.Total_amount_in_place_Develop.protocol.for.maintaining.ongoing.commun...": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Develop.protocol.for.maintaining.ongoing.commun...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.a.district.wide.plan.for.consistent.and...": [
  [        1,        2,        3,        4 ],
@@ -3614,6 +3967,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Develop.a.district.wide.plan.for.consistent.and...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Identify.a.process.for.monitoring.progress.of.t...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -3689,6 +4046,10 @@
 "1.Total_amount_in_place_Identify.a.process.for.monitoring.progress.of.t...": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Identify.a.process.for.monitoring.progress.of.t...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Administer.Self.Assessment.Practice.Profile.at....": [
  [        1,        2,        3,        4 ],
@@ -3766,6 +4127,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Administer.Self.Assessment.Practice.Profile.at....": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Administer.implementation.survey..e.g..Collabor...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -3841,6 +4206,10 @@
 "1.Total_amount_in_place_Administer.implementation.survey..e.g..Collabor...": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Administer.implementation.survey..e.g..Collabor...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Use.technology.to.increase.the.quality.and.time...": [
  [        1,        2,        3,        4 ],
@@ -3918,6 +4287,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Use.technology.to.increase.the.quality.and.time...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Participate.in.regional..cadre..and.state.event...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -3993,6 +4366,10 @@
 "1.Total_amount_in_place_Participate.in.regional..cadre..and.state.event...": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Participate.in.regional..cadre..and.state.event...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [
  [        1,        2,        3,        4 ],
@@ -4070,6 +4447,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Support.the.use.of.data..e.g..SAPP..CWIS..to.in...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.and.implement.protocol.for.conducting.w...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -4145,6 +4526,10 @@
 "1.Total_amount_in_place_Develop.and.implement.protocol.for.conducting.w...": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Develop.and.implement.protocol.for.conducting.w...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Annually..summarize.district.wide.fidelity.and....": [
  [        1,        2,        3,        4 ],
@@ -4222,6 +4607,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Annually..summarize.district.wide.fidelity.and....": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Establish.district..and.building.level.goal.s.....": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -4297,6 +4686,10 @@
 "1.Total_amount_in_place_Establish.district..and.building.level.goal.s.....": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Establish.district..and.building.level.goal.s.....": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Revisit.and.revise.PD.plans.based.on.data.": [
  [        1,        2,        3,        4 ],
@@ -4374,6 +4767,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Revisit.and.revise.PD.plans.based.on.data.": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Develop.timelines.and.expectations.aligning.imp...": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -4449,6 +4846,10 @@
 "1.Total_amount_in_place_Develop.timelines.and.expectations.aligning.imp...": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Develop.timelines.and.expectations.aligning.imp...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Align.implementation.goals.with.CSIP..Comprehen...": [
  [        1,        2,        3,        4 ],
@@ -4526,6 +4927,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Align.implementation.goals.with.CSIP..Comprehen...": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Teacher_leader_growth_mindset_In_Place": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -4602,6 +5007,10 @@
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
 ],
+"1.ETLP_avg_Teacher_leader_growth_mindset_In_Place": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
 "1.Form.district.leadership.team..DLT....see.Bluep..._Total_amount_in_place": [
  [        1,        2,        3,        4 ],
 [      1.5,      2.5,      3.5 ] 
@@ -4677,6 +5086,90 @@
 "1.Total_amount_in_place_Total_amount_in_place": [
  [        0,        4,        8,       12,       16 ],
 [        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_Total_amount_in_place": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
+],
+"1.Form.district.leadership.team..DLT....see.Bluep..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Designate.district.level.contact.person._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Designate.building.level.contact.person..for.ea..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Develop.protocol.for.maintaining.ongoing.commun..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Develop.a.district.wide.plan.for.consistent.and..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Identify.a.process.for.monitoring.progress.of.t..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Administer.Self.Assessment.Practice.Profile.at...._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Administer.implementation.survey..e.g..Collabor..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Use.technology.to.increase.the.quality.and.time..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Participate.in.regional..cadre..and.state.event..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Support.the.use.of.data..e.g..SAPP..CWIS..to.in..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Develop.and.implement.protocol.for.conducting.w..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Annually..summarize.district.wide.fidelity.and...._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Establish.district..and.building.level.goal.s....._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Revisit.and.revise.PD.plans.based.on.data._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Develop.timelines.and.expectations.aligning.imp..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Align.implementation.goals.with.CSIP..Comprehen..._ETLP_avg": [
+ [        1,        2,        3,        4 ],
+[      1.5,      2.5,      3.5 ] 
+],
+"1.Teacher_leader_growth_mindset_In_Place_ETLP_avg": [
+ [        0,        2,        4,        6,        8,       10 ],
+[        1,        3,        5,        7,        9 ] 
+],
+"1.Total_amount_in_place_ETLP_avg": [
+ [        0,        4,        8,       12,       16 ],
+[        2,        6,       10,       14 ] 
+],
+"1.ETLP_avg_ETLP_avg": [
+ [      2.5,      3.5,      4.5 ],
+[        3,        4,        5 ] 
 ] 
 },
 "curr_select": {
@@ -4686,9 +5179,9 @@
 } 
 },
 "geoms": [
- "geom7_point_varscatter",
-"geom8_text_varscatter",
-"geom9_text_varscatter" 
+ "geom8_point_varscatter",
+"geom9_text_varscatter",
+"geom10_text_varscatter" 
 ] 
 } 
 },
