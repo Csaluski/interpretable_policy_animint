@@ -216,67 +216,23 @@
 "colour": "rgb",
 "size": "numeric" 
 },
-"chunk_order": [
- "var" 
+"chunk_order": [],
+"nest_order": [
+ "showSelected1" 
 ],
-"nest_order": [],
-"subset_order": [],
-"columns": {
- "common": [
- "x",
-"key",
-"clickSelects",
-"xmin",
-"xmax",
-"size",
-"group" 
-] 
-},
-"chunks": {
- "Alignment.and.systems.planning": 1,
-"Area.Supervisor": 2,
-"Building.Leadership.Team.Members": 3,
-"Building.level.Educators": 4,
-"Collaborative.teams": 5,
-"Collective.teacher.efficacy": 6,
-"Common.formative.assessment": 7,
-"CWIS": 8,
-"Data.based.decision.making": 9,
-"DESE.virtual.learning.platform": 10,
-"Distance.Learning": 11,
-"District.Contact.Person": 12,
-"District.Leadership.Team.Members": 13,
-"Effective.teaching.learning.practices": 14,
-"ETLP_avg": 15,
-"Instructional.Leadership": 16,
-"Interaction.Type_In-person": 17,
-"Interaction.Type_In-person and virtual": 18,
-"Interaction.Type_Phone": 19,
-"Interaction.Type_Unknown": 20,
-"Interaction.Type_Virtual": 21,
-"Leadership.for.Effective.Implementation.of.District.Wide.Evidenced.Based.Practices": 22,
-"Learning.module.materials..i.e..power.points..handouts.": 23,
-"MMD.DCI.expectations.logistics.DESE.specifics": 24,
-"Other.Building.Administrators": 25,
-"Other.District.Administrators": 26,
-"Parents": 27,
-"Practice.profiles": 28,
-"Review.of.CFA.data": 29,
-"RPDC.Director": 30,
-"School.based.implementation.coaching": 31,
-"Self.assessment.practice.profile..SAPP.": 32,
-"Virtual.Learning.Modules.and.or.PowerPoints": 33 
-},
-"total": 33 
+"subset_order": [
+ "showSelected1" 
+],
+"chunks": 1,
+"total": 1 
 },
 "geom7_text_coefvec": {
  "geom": "text",
 "classed": "geom7_text_coefvec",
 "aes": {
  "x": "2",
-"y": "-(var.order + 0.3)",
+"y": "-var.order - 0.3",
 "label": "corr.var",
-"tooltip": "corr.coef",
 "clickSelects": "corr.var",
 "showSelected1": "var" 
 },
@@ -294,7 +250,6 @@
  "x": "numeric",
 "y": "numeric",
 "label": "character",
-"tooltip": "numeric",
 "clickSelects": "character",
 "showSelected1": "factor",
 "PANEL": "integer",
@@ -484,8 +439,8 @@
 "type": "single",
 "showSelected": true,
 "clickSelects": true,
-"selected": "District.Contact.Person",
-"levels": [ "District.Contact.Person", "Instructional.Leadership", "Interaction.Type_Phone", "Interaction.Type_Virtual", "Leadership.for.Effective.Implementation.of.District.Wide.Evidenced.Based.Practices", "Other.Building.Administrators", "Other.District.Administrators", "Parents", "Self.assessment.practice.profile..SAPP.", "Virtual.Learning.Modules.and.or.PowerPoints", "Building.Leadership.Team.Members", "DESE.virtual.learning.platform", "Interaction.Type_Unknown", "Review.of.CFA.data", "Area.Supervisor", "Collective.teacher.efficacy", "Alignment.and.systems.planning", "Data.based.decision.making", "MMD.DCI.expectations.logistics.DESE.specifics", "Learning.module.materials..i.e..power.points..handouts.", "District.Leadership.Team.Members", "Distance.Learning", "Practice.profiles", "CWIS", "RPDC.Director", "Effective.teaching.learning.practices", "Building.level.Educators", "Collaborative.teams", "Common.formative.assessment", "School.based.implementation.coaching", "ETLP_avg", "Interaction.Type_In-person", "Interaction.Type_In-person and virtual" ],
+"selected": "Alignment.and.systems.planning",
+"levels": [ "Alignment.and.systems.planning", "Building.Leadership.Team.Members", "Collective.teacher.efficacy", "DESE.virtual.learning.platform", "District.Contact.Person", "Interaction.Type_Phone", "Interaction.Type_Virtual", "Leadership.for.Effective.Implementation.of.District.Wide.Evidenced.Based.Practices", "Learning.module.materials..i.e..power.points..handouts.", "Other.Building.Administrators", "Parents", "Self.assessment.practice.profile..SAPP.", "Virtual.Learning.Modules.and.or.PowerPoints", "Area.Supervisor", "Interaction.Type_Unknown", "Review.of.CFA.data", "District.Leadership.Team.Members", "Distance.Learning", "Instructional.Leadership", "Collaborative.teams", "Other.District.Administrators", "Practice.profiles", "CWIS", "Data.based.decision.making", "Building.level.Educators", "RPDC.Director", "School.based.implementation.coaching", "MMD.DCI.expectations.logistics.DESE.specifics", "Common.formative.assessment", "Effective.teaching.learning.practices", "ETLP_avg", "Interaction.Type_In-person", "Interaction.Type_In-person and virtual" ],
 "update": [
  "geom1_segment_varcoef",
 "geom6_tile_coefvec",
@@ -578,7 +533,6 @@
 "1",
 "2",
 "3",
-"4",
 "5",
 "6",
 "7",
@@ -598,7 +552,6 @@
 "",
 "",
 "",
-"",
 "" 
 ],
 "n": {
@@ -607,17 +560,17 @@
 } 
 },
 "layout": {
- "PANEL": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ],
-"ROW": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
-"COL": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
-"count": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, null ],
-"SCALE_X": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
-"SCALE_Y": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ],
-"AXIS_Y": [ true, true, true, true, true, true, true, true, true, true, true, true ],
-"AXIS_X": [ false, false, false, false, false, false, false, false, false, false, false, true ],
-"coord_fixed": [ false, false, false, false, false, false, false, false, false, false, false, false ],
-"width_proportion": [        1,        1,        1,        1,        1,        1,        1,        1,        1,        1,        1,        1 ],
-"height_proportion": [ 0.3053892, 0.06586826, 0.06586826, 0.06586826, 0.09580838, 0.03592814, 0.03592814, 0.06586826, 0.06586826, 0.03592814, 0.1257485, 0.03592814 ] 
+ "PANEL": [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" ],
+"ROW": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
+"COL": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+"count": [ 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, null ],
+"SCALE_X": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+"SCALE_Y": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
+"AXIS_Y": [ true, true, true, true, true, true, true, true, true, true, true ],
+"AXIS_X": [ false, false, false, false, false, false, false, false, false, false, true ],
+"coord_fixed": [ false, false, false, false, false, false, false, false, false, false, false ],
+"width_proportion": [        1,        1,        1,        1,        1,        1,        1,        1,        1,        1,        1 ],
+"height_proportion": [ 0.3975904, 0.09638554, 0.03614458, 0.06626506, 0.09638554, 0.06626506, 0.03614458, 0.06626506, 0.03614458, 0.06626506, 0.03614458 ] 
 },
 "panel_background": {
  "fill": "#EBEBEB",
@@ -634,64 +587,81 @@
 "loc": {
  "x": [
  [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
-],
-[
-   -0.025,
-       0,
-   0.025 
+   0.025,
+    0.05 
 ] 
 ],
 "y": [
@@ -705,15 +675,18 @@
 7,
 8,
 9,
-10 
+10,
+11,
+12,
+13 
 ],
 [
  1,
-2 
+2,
+3 
 ],
 [
- 1,
-2 
+ 1 
 ],
 [
  1,
@@ -725,7 +698,8 @@
 3 
 ],
 [
- 1 
+ 1,
+2 
 ],
 [
  1 
@@ -735,17 +709,11 @@
 2 
 ],
 [
- 1,
-2 
-],
-[
  1 
 ],
 [
  1,
-2,
-3,
-4 
+2 
 ],
 [
  1 
@@ -761,105 +729,140 @@
 "loc": {
  "x": [
  [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ],
 [
-  -0.0375,
+  -0.0625,
+   -0.05,
+ -0.0375,
   -0.025,
  -0.0125,
        0,
   0.0125,
-   0.025 
-],
-[
-  -0.0375,
-  -0.025,
- -0.0125,
-       0,
-  0.0125,
-   0.025 
+   0.025,
+  0.0375,
+    0.05 
 ] 
 ],
 "y": [
  [],
-[],
 [],
 [],
 [],
@@ -875,16 +878,20 @@
 },
 "axis1": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -897,114 +904,46 @@
 7,
 8,
 9,
-10 
+10,
+11,
+12,
+13 
 ],
 "ylab": [
- "District.Contact.Person",
-"Instructional.Leadership",
+ "Alignment.and.systems.planning",
+"Building.Leadership.Team.Members",
+"Collective.teacher.efficacy",
+"DESE.virtual.learning.platform",
+"District.Contact.Person",
 "Interaction.Type_Phone",
 "Interaction.Type_Virtual",
 "Leadership.for.Effective.Implementation.of.District.Wide.Evidenced.Based.Practices",
+"Learning.module.materials..i.e..power.points..handouts.",
 "Other.Building.Administrators",
-"Other.District.Administrators",
 "Parents",
 "Self.assessment.practice.profile..SAPP.",
 "Virtual.Learning.Modules.and.or.PowerPoints" 
 ],
-"yrange": [      0.4,     10.6 ],
+"yrange": [      0.4,     13.6 ],
 "yline": true,
 "yticks": true 
 },
 "axis2": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
-"xline": true,
-"xticks": true,
-"y": [
- 1,
-2 
-],
-"ylab": [
- "Building.Leadership.Team.Members",
-"DESE.virtual.learning.platform" 
-],
-"yrange": [      0.4,      2.6 ],
-"yline": true,
-"yticks": true 
-},
-"axis3": {
- "x": [
-   -0.025,
-       0,
-   0.025 
-],
-"xlab": [
- "-0.025",
-"0.000",
-"0.025" 
-],
-"xrange": [ -0.04953739, 0.03241354 ],
-"xline": true,
-"xticks": true,
-"y": [
- 1,
-2 
-],
-"ylab": [
- "Interaction.Type_Unknown",
-"Review.of.CFA.data" 
-],
-"yrange": [      0.4,      2.6 ],
-"yline": true,
-"yticks": true 
-},
-"axis4": {
- "x": [
-   -0.025,
-       0,
-   0.025 
-],
-"xlab": [
- "-0.025",
-"0.000",
-"0.025" 
-],
-"xrange": [ -0.04953739, 0.03241354 ],
-"xline": true,
-"xticks": true,
-"y": [
- 1,
-2 
-],
-"ylab": [
- "Area.Supervisor",
-"Collective.teacher.efficacy" 
-],
-"yrange": [      0.4,      2.6 ],
-"yline": true,
-"yticks": true 
-},
-"axis5": {
- "x": [
-   -0.025,
-       0,
-   0.025 
-],
-"xlab": [
- "-0.025",
-"0.000",
-"0.025" 
-],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1013,50 +952,30 @@
 3 
 ],
 "ylab": [
- "Alignment.and.systems.planning",
-"Data.based.decision.making",
-"MMD.DCI.expectations.logistics.DESE.specifics" 
+ "Area.Supervisor",
+"Interaction.Type_Unknown",
+"Review.of.CFA.data" 
 ],
 "yrange": [      0.4,      3.6 ],
 "yline": true,
 "yticks": true 
 },
-"axis6": {
+"axis3": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
-"xline": true,
-"xticks": true,
-"y": [
- 1 
-],
-"ylab": [
- "Learning.module.materials..i.e..power.points..handouts." 
-],
-"yrange": [      0.4,      1.6 ],
-"yline": true,
-"yticks": true 
-},
-"axis7": {
- "x": [
-   -0.025,
-       0,
-   0.025 
-],
-"xlab": [
- "-0.025",
-"0.000",
-"0.025" 
-],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1069,18 +988,22 @@
 "yline": true,
 "yticks": true 
 },
-"axis8": {
+"axis4": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1089,24 +1012,60 @@
 ],
 "ylab": [
  "Distance.Learning",
-"Practice.profiles" 
+"Instructional.Leadership" 
 ],
 "yrange": [      0.4,      2.6 ],
 "yline": true,
 "yticks": true 
 },
-"axis9": {
+"axis5": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
+"xline": true,
+"xticks": true,
+"y": [
+ 1,
+2,
+3 
+],
+"ylab": [
+ "Collaborative.teams",
+"Other.District.Administrators",
+"Practice.profiles" 
+],
+"yrange": [      0.4,      3.6 ],
+"yline": true,
+"yticks": true 
+},
+"axis6": {
+ "x": [
+    -0.05,
+  -0.025,
+       0,
+   0.025,
+    0.05 
+],
+"xlab": [
+ "-0.050",
+"-0.025",
+"0.000",
+"0.025",
+"0.050" 
+],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1115,78 +1074,144 @@
 ],
 "ylab": [
  "CWIS",
-"RPDC.Director" 
+"Data.based.decision.making" 
 ],
 "yrange": [      0.4,      2.6 ],
 "yline": true,
 "yticks": true 
 },
-"axis10": {
+"axis7": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
  1 
 ],
 "ylab": [
- "Effective.teaching.learning.practices" 
+ "Building.level.Educators" 
 ],
 "yrange": [      0.4,      1.6 ],
 "yline": true,
 "yticks": true 
 },
-"axis11": {
+"axis8": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
  1,
-2,
-3,
-4 
+2 
 ],
 "ylab": [
- "Building.level.Educators",
-"Collaborative.teams",
-"Common.formative.assessment",
+ "RPDC.Director",
 "School.based.implementation.coaching" 
 ],
-"yrange": [      0.4,      4.6 ],
+"yrange": [      0.4,      2.6 ],
 "yline": true,
 "yticks": true 
 },
-"axis12": {
+"axis9": {
  "x": [
-   -0.025,
+    -0.05,
+  -0.025,
        0,
-   0.025 
+   0.025,
+    0.05 
 ],
 "xlab": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
-"xrange": [ -0.04953739, 0.03241354 ],
+"xrange": [ -0.07169695, 0.0566202 ],
+"xline": true,
+"xticks": true,
+"y": [
+ 1 
+],
+"ylab": [
+ "MMD.DCI.expectations.logistics.DESE.specifics" 
+],
+"yrange": [      0.4,      1.6 ],
+"yline": true,
+"yticks": true 
+},
+"axis10": {
+ "x": [
+    -0.05,
+  -0.025,
+       0,
+   0.025,
+    0.05 
+],
+"xlab": [
+ "-0.050",
+"-0.025",
+"0.000",
+"0.025",
+"0.050" 
+],
+"xrange": [ -0.07169695, 0.0566202 ],
+"xline": true,
+"xticks": true,
+"y": [
+ 1,
+2 
+],
+"ylab": [
+ "Common.formative.assessment",
+"Effective.teaching.learning.practices" 
+],
+"yrange": [      0.4,      2.6 ],
+"yline": true,
+"yticks": true 
+},
+"axis11": {
+ "x": [
+    -0.05,
+  -0.025,
+       0,
+   0.025,
+    0.05 
+],
+"xlab": [
+ "-0.050",
+"-0.025",
+"0.000",
+"0.025",
+"0.050" 
+],
+"xrange": [ -0.07169695, 0.0566202 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1206,41 +1231,43 @@
 "yanchor": "end",
 "yangle":        0,
 "xlabs": [
- "-0.025",
+ "-0.050",
+"-0.025",
 "0.000",
-"0.025" 
+"0.025",
+"0.050" 
 ],
 "ylabs": [
- "District.Contact.Person",
-"Instructional.Leadership",
+ "Alignment.and.systems.planning",
+"Building.Leadership.Team.Members",
+"Collective.teacher.efficacy",
+"DESE.virtual.learning.platform",
+"District.Contact.Person",
 "Interaction.Type_Phone",
 "Interaction.Type_Virtual",
 "Leadership.for.Effective.Implementation.of.District.Wide.Evidenced.Based.Practices",
+"Learning.module.materials..i.e..power.points..handouts.",
 "Other.Building.Administrators",
-"Other.District.Administrators",
 "Parents",
 "Self.assessment.practice.profile..SAPP.",
 "Virtual.Learning.Modules.and.or.PowerPoints",
-"Building.Leadership.Team.Members",
-"DESE.virtual.learning.platform",
+"Area.Supervisor",
 "Interaction.Type_Unknown",
 "Review.of.CFA.data",
-"Area.Supervisor",
-"Collective.teacher.efficacy",
-"Alignment.and.systems.planning",
-"Data.based.decision.making",
-"MMD.DCI.expectations.logistics.DESE.specifics",
-"Learning.module.materials..i.e..power.points..handouts.",
 "District.Leadership.Team.Members",
 "Distance.Learning",
+"Instructional.Leadership",
+"Collaborative.teams",
+"Other.District.Administrators",
 "Practice.profiles",
 "CWIS",
-"RPDC.Director",
-"Effective.teaching.learning.practices",
+"Data.based.decision.making",
 "Building.level.Educators",
-"Collaborative.teams",
-"Common.formative.assessment",
+"RPDC.Director",
 "School.based.implementation.coaching",
+"MMD.DCI.expectations.logistics.DESE.specifics",
+"Common.formative.assessment",
+"Effective.teaching.learning.practices",
 "ETLP_avg" 
 ],
 "options": {
@@ -1493,7 +1520,7 @@
 "90",
 "120" 
 ],
-"xrange": [ -5.893931, 122.8926 ],
+"xrange": [ -5.893958, 122.8931 ],
 "xline": true,
 "xticks": true,
 "y": [
@@ -1510,7 +1537,7 @@
 "90",
 "120" 
 ],
-"yrange": [ -5.893926, 122.8925 ],
+"yrange": [ -5.893985, 122.8937 ],
 "yline": true,
 "yticks": true 
 },
@@ -6993,7 +7020,7 @@
 ] 
 },
 "curr_select": {
- "corr.var": "District.Contact.Person",
+ "corr.var": "Alignment.and.systems.planning",
 "var": "District.Leadership.Team.Members" 
 } 
 },
@@ -12449,7 +12476,7 @@
 ] 
 },
 "curr_select": {
- "corr.var": "District.Contact.Person",
+ "corr.var": "Alignment.and.systems.planning",
 "var": "District.Leadership.Team.Members" 
 } 
 } 
